@@ -20,7 +20,7 @@
     'version': '13.0.2.12',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'product', 'sale', 'sale_management','mrp', 'stock' 'google_spreadsheet'],
+    'depends': ['base', 'product', 'sale', 'sale_management','mrp', 'stock', 'google_spreadsheet'],
 
     # always loaded
     'data': [
