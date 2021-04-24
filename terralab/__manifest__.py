@@ -20,7 +20,7 @@
     'version': '13.0.2.12',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'product', 'sale', 'google_spreadsheet'],
+    'depends': ['base', 'product', 'sale', 'google_spreadsheet', 'uom', 'mrp', 'stock', 'sale_management'],
 
     # always loaded
     'data': [
@@ -29,8 +29,6 @@
         'reports/terralab_test_report.xml',
         'reports/terralab_test_report_2.xml',
         'reports/terralab_test_report_3.xml',
-        'views/menu_actions.xml',
-        'views/menu_items.xml',
         'views/order_form.xml',
         'views/order_views.xml',
         'views/product_views.xml',
@@ -42,6 +40,9 @@
         'views/submitted_test_variable_views.xml',
         'views/test_views.xml',
         'views/test_variable_views.xml',
+        # Menu
+        'views/menu_actions.xml',
+        'views/menu_items.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
