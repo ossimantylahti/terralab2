@@ -1,0 +1,37 @@
+graph:{
+  title:"classes"
+  layoutalgorithm:dfs
+  late_edge_labels:yes
+  port_sharing:no
+  manhattan_edges:yes
+  node: {title:"0"  label:"\fbOrder\fn\n\f____________________________________\n\f08terralab_next_action\n\f08terralab_reports\n\f08terralab_samples\n\f08terralab_status\n\f____________________________________\n\f10action_terralab_accept()\n\f10action_terralab_calculate()\n\f10action_terralab_complete()\n\f10action_terralab_draft()\n\f10action_terralab_generate_report()\n\f10action_terralab_reject()\n\f10action_terralab_submit()\n\f10action_terralab_view_tests()\n\f10action_terralab_view_testvariables()\n\f10calculate_all_test_results()\n\f10compute_terralab_next_action()\n\f10create()\n\f10generate_report()\n\f10write()"
+  shape:box
+}
+  node: {title:"1"  label:"\fbReport\fn\n\f______________\n\f08generated_at\n\f08order\n\f______________\n\f10name_get()"
+  shape:box
+}
+  node: {title:"2"  label:"\fbSample\fn\n\f______________________________\n\f08order\n\f08sample_type\n\f08serial_number\n\f08tests\n\f______________________________\n\f10compute_terralab_next_action()\n\f10name_get()"
+  shape:box
+}
+  node: {title:"3"  label:"\fbSampleType\fn\n\f____________\n\f08name\n\f08samples\n\f08test_types\n\f____________"
+  shape:box
+}
+  node: {title:"4"  label:"\fbSpreadsheet\fn\n\f__________________\n\f08name\n\f08spreadsheet_id\n\f08spreadsheet_url\n\f08test_types\n\f__________________\n\f10calculate_result()\n\f10write()"
+  shape:box
+}
+  node: {title:"5"  label:"\fbTerralab\fn\n\f____________\n\f10customview()"
+  shape:box
+}
+  node: {title:"6"  label:"\fbTest\fn\n\f______________________________\n\f08sample\n\f08test_result\n\f08test_type\n\f08test_variables\n\f______________________________\n\f10action_terralab_calculate()\n\f10calculate_test_result()\n\f10compute_terralab_next_action()\n\f10name_get()"
+  shape:box
+}
+  node: {title:"7"  label:"\fbTestType\fn\n\f_________________________________\n\f08terralab_sample_type\n\f08terralab_spreadsheet\n\f08terralab_spreadsheet_result_ref\n\f08terralab_test_name\n\f08terralab_test_variable_types\n\f_________________________________"
+  shape:box
+}
+  node: {title:"8"  label:"\fbTestVariable\fn\n\f______________________________\n\f08name\n\f08order_name\n\f08sample\n\f08test\n\f08test_variable_type\n\f08value\n\f______________________________\n\f10compute_terralab_next_action()"
+  shape:box
+}
+  node: {title:"9"  label:"\fbTestVariableType\fn\n\f_______________________\n\f08name\n\f08spreadsheet_input_ref\n\f08test_type\n\f08test_variables\n\f_______________________"
+  shape:box
+}
+}

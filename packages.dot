@@ -1,0 +1,10 @@
+digraph "packages" {
+charset="utf-8"
+rankdir=BT
+"0" [label="terralab", shape="box"];
+"1" [label="terralab.__manifest__", shape="box"];
+"2" [label="terralab.controllers", shape="box"];
+"3" [label="terralab.controllers.controllers", shape="box"];
+"4" [label="terralab.models", shape="box"];
+"5" [label="terralab.models.models", shape="box"];
+}

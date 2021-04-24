@@ -1,0 +1,56 @@
+<odoo>
+  <data>
+
+    <!-- Views for managing TerraLab Submitted Tests -->
+    <record model="ir.ui.view" id="terralab.submitted_test_tree">
+      <field name="name">terralab.submittedtest.tree</field>
+      <field name="model">terralab.submittedtest</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="order"/>
+          <field name="submitted_sample"/>
+          <field name="test"/>
+          <field name="test_result"/>
+          <field name="test_result_uom"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="terralab.submitted_test_form">
+      <field name="name">terralab.submittedtest.form</field>
+      <field name="model">terralab.submittedtest</field>
+      <field name="arch" type="xml">
+        <form string="Submitted Test Form">
+          <header>
+            <button name="action_terralab_calculate" string="Calculate TerraLab Test Result" type="object"/>
+          </header>
+          <sheet>
+            <notebook position="inside">
+              <page string="Submitted Test Settings">
+                <group name="submitted_test_settings">
+                  <field name="test"/>
+                  <field name="test_result"/>
+                  <field name="test_result_uom"/>
+                </group>
+              </page>
+              <page string="Submitted Test Variables" name="terralab_submitted_test_variables">
+                <field name="submitted_test_variables" widget="one2many" mode="tree,kanban">
+                  <tree string="TerraLab Submitted Test Variables">
+                    <field name="submitted_sample" />
+                    <field name="test_variable" />
+                    <field name="value" />
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers"/>
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>

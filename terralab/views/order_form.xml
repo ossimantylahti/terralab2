@@ -1,0 +1,102 @@
+<odoo>
+  <data>
+    <!-- Customize Order Form -->
+    <record model="ir.ui.view" id="terralab.order_form_view">
+      <field name="name">TerraLab Order</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="priority" eval="15"/>
+      <field name="arch" type="xml">
+        <header>
+          <button name="action_terralab_submit" string="Submit TerraLab Order" type="object" attrs="{'invisible': [('terralab_status', '!=', 'draft')]}"/>
+          <button name="action_terralab_accept" string="Accept TerraLab Order" type="object" attrs="{'invisible': [('terralab_status', '!=', 'submitted')]}"/>
+          <button name="action_terralab_reject" string="Reject TerraLab Order" type="object" attrs="{'invisible': [('terralab_status', '!=', 'submitted')]}"/>
+          <button name="action_terralab_draft" string="Reset to TerraLab Draft" type="object" attrs="{'invisible': [('terralab_status', 'not in', ['submitted', 'rejected'])]}"/>
+          <button name="action_terralab_calculate" string="Calculate TerraLab Test Results" type="object" attrs="{'invisible': [('terralab_status', '!=', 'accepted')]}"/>
+          <button name="action_terralab_calculate" string="Recalculate TerraLab Test Results" type="object" attrs="{'invisible': [('terralab_status', '!=', 'calculated')]}"/>
+          <button name="action_terralab_generate_report" string="Generate TerraLab Report" type="object" attrs="{'invisible': [('terralab_status', '!=', 'calculated')]}"/>
+          <button name="action_terralab_complete" string="Complete TerraLab Order" type="object" attrs="{'invisible': [('terralab_status', '!=', 'report_generated')]}"/>
+        </header>
+        <notebook position="inside">
+
+          <page string="TerraLab" name="terralab">
+            <div class="o_horizontal_separator">TerraLab</div>
+            <group name="terralab">
+
+              <label for="terralab_status" string="TerraLab Status"/>
+              <div class="o_row" name="terralab_status">
+                <field name="terralab_status"/>
+              </div>
+
+              <label for="terralab_samples_count" string="Samples"/>
+              <div class="o_row" name="terralab_samples_count">
+                <field name="terralab_submitted_samples_count" readonly="1"/>
+              </div>
+
+              <label for="terralab_tests_count" string="Tests"/>
+              <div class="o_row" name="terralab_tests_count">
+                <field name="terralab_submitted_tests_count" readonly="1"/>
+              </div>
+
+              <label for="terralab_test_variables_count" string="Test Variables"/>
+              <div class="o_row" name="terralab_test_variables_count">
+                <field name="terralab_submitted_test_variables_count" readonly="1"/>
+              </div>
+
+              <label for="terralab_reports_count" string="Reports"/>
+              <div class="o_row" name="terralab_reports_count">
+                <field name="terralab_reports_count" readonly="1"/>
+                <span>/</span>
+                <field name="terralab_submitted_tests_count" readonly="1"/>
+              </div>
+
+            </group>
+          </page>
+
+          <page string="TerraLab Samples" name="terralab_samples">
+            <field name="terralab_submitted_samples" widget="one2many" mode="tree,kanban">
+              <tree string="TerraLab Samples">
+                <field name="sample" string="Sample"/>
+                <field name="serial_number" string="Serial Number"/>
+                <field name="order_line" string="Order Line"/>
+              </tree>
+            </field>
+          </page>
+
+          <page string="TerraLab Tests" name="terralab_tests">
+            <field name="terralab_submitted_tests" widget="one2many" mode="tree,kanban">
+              <tree string="TerraLab Tests" editable="bottom">
+                <field name="test" string="Test"/>
+                <field name="submitted_sample" string="Sample"/>
+                <field name="test_result" string="Result"/>
+                <field name="test_result_uom" string="Result Unit"/>
+              </tree>
+            </field>
+          </page>
+
+          <page string="TerraLab Test Variables" name="terralab_test_variables">
+            <field name="terralab_submitted_test_variables" widget="one2many" mode="tree,kanban">
+              <tree string="TerraLab Test Variables" editable="bottom">
+                <field name="test_variable" string="Test Variable"/>
+                <field name="submitted_test" string="Test"/>
+                <field name="submitted_sample" string="Sample" />
+                <field name="value" string="Value"/>
+              </tree>
+            </field>
+          </page>
+
+          <page string="TerraLab Reports" name="terralab_reports">
+            <field name="terralab_reports" widget="one2many" mode="tree,kanban" readonly="1">
+              <tree string="TerraLab Reports">
+                <field name="generated_at" string="Generated At" />
+                <field name="report_name" string="Report Name" />
+                <field name="print_count" string="Print Count" />
+              </tree>
+            </field>
+          </page>
+
+        </notebook>
+      </field>
+    </record>
+  </data>
+</odoo>

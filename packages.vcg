@@ -1,0 +1,25 @@
+graph:{
+  title:"packages"
+  layoutalgorithm:dfs
+  late_edge_labels:yes
+  port_sharing:no
+  manhattan_edges:yes
+  node: {title:"0"  label:"\fbterralab\fn"
+  shape:box
+}
+  node: {title:"1"  label:"\fbterralab.__manifest__\fn"
+  shape:box
+}
+  node: {title:"2"  label:"\fbterralab.controllers\fn"
+  shape:box
+}
+  node: {title:"3"  label:"\fbterralab.controllers.controllers\fn"
+  shape:box
+}
+  node: {title:"4"  label:"\fbterralab.models\fn"
+  shape:box
+}
+  node: {title:"5"  label:"\fbterralab.models.models\fn"
+  shape:box
+}
+}

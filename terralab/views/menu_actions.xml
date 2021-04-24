@@ -1,0 +1,80 @@
+<odoo>
+  <data>
+
+    <!-- Menu action: TerraLab Orders -->
+    <record model="ir.actions.act_window" id="terralab.orders_list_action">
+      <field name="name">Terralab Orders</field>
+      <field name="res_model">sale.order</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[("terralab_status", "!=", False)]</field>
+      <field name="view_id" ref="terralab.order_tree"/>
+    </record>
+
+    <!-- Menu action: TerraLab Products -->
+      <record model="ir.actions.act_window" id="terralab.products_list_action">
+      <field name="name">TerraLab Products</field>
+      <field name="res_model">product.template</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[("terralab_tests_count", ">", 0)]</field>
+      <field name="view_id" ref="terralab.product_tree"/>
+    </record>
+
+    <!-- Menu action: Reports -->
+    <record model="ir.actions.act_window" id="terralab.reports_list_action">
+      <field name="name">Terralab Reports</field>
+      <field name="res_model">terralab.report</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu action: Samples -->
+    <record model="ir.actions.act_window" id="terralab.samples_list_action">
+      <field name="name">TerraLab Samples</field>
+      <field name="res_model">terralab.sample</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu action: Tests -->
+
+    <record model="ir.actions.act_window" id="terralab.tests_list_action">
+      <field name="name">TerraLab Tests</field>
+      <field name="res_model">terralab.test</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu action: Spreadsheets -->
+        <record model="ir.actions.act_window" id="terralab.spreadsheets_list_action">
+      <field name="name">TerraLab Spreadsheets</field>
+      <field name="res_model">terralab.spreadsheet</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu action: Debugging / All Submitted Samples -->
+    <record model="ir.actions.act_window" id="terralab.submitted_samples_list_action">
+      <field name="name">TerraLab Submitted Samples</field>
+      <field name="res_model">terralab.submittedsample</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu action: Debugging / All Submitted Tests -->
+    <record model="ir.actions.act_window" id="terralab.submitted_tests_list_action">
+      <field name="name">TerraLab Submitted Tests</field>
+      <field name="res_model">terralab.submittedtest</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu action: Debugging / All Submitted Test Variables -->
+    <record model="ir.actions.act_window" id="terralab.submitted_test_variables_list_action">
+      <field name="name">TerraLab Submitted Test Variables</field>
+      <field name="res_model">terralab.submittedtestvariable</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu action: Debugging / All Test Variables -->
+    <record model="ir.actions.act_window" id="terralab.test_variables_list_action">
+      <field name="name">TerraLab Test Variables</field>
+      <field name="res_model">terralab.testvariable</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

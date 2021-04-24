@@ -1,0 +1,53 @@
+<odoo>
+  <data>
+
+    <!-- Views for managing TerraLab Submitted Samples -->
+    <record model="ir.ui.view" id="terralab.submitted_sample_tree">
+      <field name="name">terralab.submittedsample.tree</field>
+      <field name="model">terralab.submittedsample</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="order"/>
+          <field name="sample"/>
+          <field name="serial_number"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="terralab.submitted_sample_form">
+      <field name="name">terralab.submittedsample.form</field>
+      <field name="model">terralab.submittedsample</field>
+      <field name="arch" type="xml">
+        <form string="Submitted Sample Form">
+          <sheet>
+            <notebook position="inside">
+
+              <page string="Sample Settings">
+                <group name="submitted_sample_settings">
+                  <field name="sample"/>
+                  <field name="serial_number"/>
+                  <field name="order" readonly="1"/>
+                </group>
+              </page>
+
+              <page string="Test Products" name="terralab_submitted_sample_test_products">
+                <field name="test_products" string="Test Products" widget="many2many" mode="tree,kanban">
+                  <tree string="Test Products" editable="bottom">
+                    <field name="name" string="Product Name" readonly="1"/>
+                    <field name="terralab_tests" readonly="1"/>
+                  </tree>
+                </field>
+              </page>
+
+            </notebook>
+            <div class="oe_chatter">
+              <field name="message_follower_ids" widget="mail_followers"/>
+              <field name="message_ids" widget="mail_thread"/>
+            </div>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>

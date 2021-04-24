@@ -1,0 +1,14 @@
+digraph "classes" {
+charset="utf-8"
+rankdir=BT
+"0" [label="{Order|terralab_next_action\lterralab_reports\lterralab_samples\lterralab_status\l|action_terralab_accept()\laction_terralab_calculate()\laction_terralab_complete()\laction_terralab_draft()\laction_terralab_generate_report()\laction_terralab_reject()\laction_terralab_submit()\laction_terralab_view_tests()\laction_terralab_view_testvariables()\lcalculate_all_test_results()\lcompute_terralab_next_action()\lcreate()\lgenerate_report()\lwrite()\l}", shape="record"];
+"1" [label="{Report|generated_at\lorder\l|name_get()\l}", shape="record"];
+"2" [label="{Sample|order\lsample_type\lserial_number\ltests\l|compute_terralab_next_action()\lname_get()\l}", shape="record"];
+"3" [label="{SampleType|name\lsamples\ltest_types\l|}", shape="record"];
+"4" [label="{Spreadsheet|name\lspreadsheet_id\lspreadsheet_url\ltest_types\l|calculate_result()\lwrite()\l}", shape="record"];
+"5" [label="{Terralab|\l|customview()\l}", shape="record"];
+"6" [label="{Test|sample\ltest_result\ltest_type\ltest_variables\l|action_terralab_calculate()\lcalculate_test_result()\lcompute_terralab_next_action()\lname_get()\l}", shape="record"];
+"7" [label="{TestType|terralab_sample_type\lterralab_spreadsheet\lterralab_spreadsheet_result_ref\lterralab_test_name\lterralab_test_variable_types\l|}", shape="record"];
+"8" [label="{TestVariable|name\lorder_name\lsample\ltest\ltest_variable_type\lvalue\l|compute_terralab_next_action()\l}", shape="record"];
+"9" [label="{TestVariableType|name\lspreadsheet_input_ref\ltest_type\ltest_variables\l|}", shape="record"];
+}
