@@ -3,8 +3,6 @@ access_terralab_submittedsample,terralab.submittedsample,model_terralab_submitte
 access_terralab_sampletype,terralab.sampletype,model_terralab_sampletype,,1,1,1,1
 access_terralab_submittedtestvariable,terralab.submittedtestvariable,model_terralab_submittedtestvariable,,1,1,1,1
 access_terralab_testvariabletype,terralab.testvariabletype,model_terralab_testvariabletype,,1,1,1,1
-access_terralab_submittedreport,terralab.submittedreport,model_terralab_submittedreport,,1,1,1,1
-access_terralab_reporttype,terralab.reporttype,model_terralab_reporttype,,1,1,1,1
 access_terralab_submittedtest,terralab.submittedtest,model_terralab_submittedtest,,1,1,1,1
 access_terralab_testtype,terralab.testtype,model_terralab_testtype,,1,1,1,1
 access_terralab_spreadsheet,terralab.spreadsheet,model_terralab_spreadsheet,,1,1,1,1

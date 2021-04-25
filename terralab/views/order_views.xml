@@ -15,7 +15,6 @@
           <field name="terralab_submitted_samples_count" string="Samples" readonly="1"/>
           <field name="terralab_submitted_tests_count" string="Tests" readonly="1"/>
           <field name="terralab_submitted_test_variables_count" string="Test Variables" readonly="1"/>
-          <field name="terralab_submitted_reports_count" string="Reports" readonly="1"/>
         </tree>
       </field>
     </record>
@@ -33,7 +32,7 @@
           <filter name="terralab_rejected" string="Terralab Rejected" domain="[('terralab_status','=','rejected')]" help="Terralab Rejected"/>
           <filter name="terralab_accepted" string="Terralab Accepted" domain="[('terralab_status','=','accepted')]" help="Terralab Accepted"/>
           <filter name="terralab_calculated" string="Terralab Calculated" domain="[('terralab_status','=','calculated')]" help="Terralab Calculated"/>
-          <filter name="terralab_report_generated" string="Terralab Report Generated" domain="[('terralab_status','=','report_generated')]" help="Terralab Report Generated"/>
+          <filter name="terralab_validated" string="Terralab Validated" domain="[('terralab_status','=','validated')]" help="Terralab Validated"/>
           <filter name="terralab_completed" string="Terralab Completed" domain="[('terralab_status','=','completed')]" help="Terralab Completeds"/>
         </xpath>
       </field>

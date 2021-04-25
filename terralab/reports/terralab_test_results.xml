@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<odoo>
+  <report id="action_terralab_test_results" string="TerraLab Test Results" model="sale.order" report_type="qweb-pdf" name="terralab.test_results" menu="True" />
+  <template id="terralab.test_results">
+    <t t-call="web.html_container">
+      <t t-call="web.external_layout">
+        <t t-call="terralab.common_css"/>
+        <div class="page">
+          <t t-foreach="docs" t-as="o">
+            <t t-call="terralab.common_header">Test Results</t>
+
+            <!-- Report content -->
+            <div class="mt-3">
+              <div>Order number: <t t-esc="o.name"/></div>
+              <div>Customer: <t t-esc="o.partner_id.name"/></div>
+              <div>Number of samples: <t t-esc="len(o.terralab_submitted_samples)"/></div>
+            </div>
+
+            <div class="mt-3">
+              t t-esc="o.terralab_boilerplate_text_1"
+            </div>
+
+            <div class="mt-3">
+              t t-esc="o.terralab_boilerplate_text_2"
+            </div>
+
+            <div class="mt-4">
+              <ul class="list-group">
+                <t t-foreach="o.terralab_submitted_samples" t-as="submitted_sample">
+                  <!-- Submitted Sample -->
+                  <li class="list-group-item">
+                    <div class="font-weight-bold text-center">
+                      Sample XX: <t t-esc="submitted_sample.sample_type.name"/>
+                    </div>
+                    <div class="row mt-3">
+                      <div class="col-6">
+                        <div>Sample ID: <t t-esc="submitted_sample.serial_number"/></div>
+                        <div>Sample Type: <t t-esc="submitted_sample.sample_type.name"/></div>
+                        <div>Sample Volume: <t t-esc="'xxx'"/></div>
+                        <div>Date of Order: <t t-esc="o.create_date"/></div>
+                        <div>Sample Location: <t t-esc="'xxx'"/></div>
+                      </div>
+                      <div class="col-6">
+                        <div>Date of Sample Preparation: <t t-esc="'xxx'"/></div>
+                        <div>Date of Analysis: <t t-esc="'xxx'"/></div>
+                        <div>Report Print Out Date and User: <t t-esc="'xxx'"/></div>
+                        <div>Report Creation Date: <t t-esc="'xxx'"/></div>
+                      </div>
+                    </div>
+                    <div class="mt-3 p-1">
+                      <!-- Submitted Tests -->
+                      <ul class="list-group">
+                        <li class="list-group-item">
+                          TEST PRODUCT
+                        </li>
+                        <t t-foreach="submitted_sample.submitted_tests" t-as="submitted_test">
+                          <li class="list-group-item">
+                            <div class="">
+                              <div class="row">
+                                <div class="col-6">
+                                  <span t-field="submitted_test.test_type.name"/>
+                                </div>
+                                <div class="col-6">
+                                  <span t-field="submitted_test.test_result"/> <span t-field="submitted_test.test_result_uom"/>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </t>
+                      </ul>
+                      <!-- End of Submitted Tests -->
+                    </div>
+                  </li>
+                <!-- End of Submitted Sample -->
+                </t>
+              </ul>
+            </div>
+
+            <!-- Target Use -->
+            <div class="mt-4">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div class="font-weight-bold text-center">
+                    TARGET USE
+                    </div>
+                </li>
+              </ul>
+            </div>
+            <!-- End Target Use -->
+
+            <div class="mt-3">
+              t t-esc="o.terralab_boilerplate_text_3"
+            </div>
+
+            <div class="mt-3">
+              t t-esc="o.terralab_boilerplate_text_4"
+            </div>
+
+            <!-- End report content -->
+            <t t-call="terralab.common_footer"/>
+          </t>
+        </div>
+      </t>
+    </t>
+  </template>
+</odoo>

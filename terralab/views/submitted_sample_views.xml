@@ -26,7 +26,6 @@
                 <group name="submitted_sample_settings">
                   <field name="sample_type"/>
                   <field name="serial_number"/>
-                  <field name="order" readonly="1"/>
                 </group>
               </page>
 

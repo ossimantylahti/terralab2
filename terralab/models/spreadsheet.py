@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 import logging
 from googleapiclient.discovery import build
 import google.oauth2.credentials
@@ -23,19 +24,27 @@ class Spreadsheet(models.Model):
     spreadsheet_id = fields.Char(track_visibility='onchange')
     test_types = fields.One2many('terralab.testtype', 'spreadsheet', 'Test Types', track_visibility='onchange') # Test Types attached to this spreadsheet
 
-    # def create
+    @api.model
+    def create(self, values):
+        self._detect_spreadsheet_id(values)
+        spreadsheet = super(Spreadsheet, self).create(values)
+        return spreadsheet
 
     def write(self, values):
+        self._detect_spreadsheet_id(values)
+        super(Spreadsheet, self).write(values)
+        logger.info('Writing Spreadsheet %s' % (values))
+        return True
+
+    def _detect_spreadsheet_id(self, values):
         new_url = values.get('spreadsheet_url', None)
         if new_url:
             # Extract spreadsheet ID
             m = re.match(r'.*/([^/]+)/edit.*', new_url)
-            logger.info('Matches: %s' % (m))
             if m:
                 values['spreadsheet_id'] = m.group(1)
-        super(Spreadsheet, self).write(values)
-        logger.info('Writing Spreadsheet %s' % (values))
-        return True
+            else:
+                raise ValidationError('Invalid Spreadsheet URL - Could not detect Spreadsheet ID')
 
     def calculate_result(self, test_type, submitted_test_variables):
         access_token = self.env['google.drive.config'].get_access_token(scope='https://spreadsheets.google.com/feeds')

@@ -11,6 +11,7 @@ class SubmittedTest(models.Model):
 
     test_type = fields.Many2one('terralab.testtype', 'Test Type', track_visibility='onchange') # A Submitted Test is a specific Test Type
     order = fields.Many2one('sale.order', 'Order', track_visibility='onchange') # Submitted Test is always attached to an Order
+    order_line = fields.Many2one('sale.order.line', 'Order Line', track_visibility='onchange') # Submitted Test is automatically attached to an Order Line when creating or updating order
     submitted_sample = fields.Many2one('terralab.submittedsample', 'Submitted Sample', track_visibility='onchange') # A Submitted Test is attached to a specific Submitted Sample
     submitted_test_variables = fields.One2many('terralab.submittedtestvariable', 'submitted_test', 'Submitted Test Variables', track_visibility='onchange') # A Submitted Test has a number of Submitted Test Variables
     test_result = fields.Char(track_visibility='onchange')

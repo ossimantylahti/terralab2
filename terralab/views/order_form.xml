@@ -14,8 +14,8 @@
           <button name="action_terralab_draft" string="Reset to TerraLab Draft" type="object" attrs="{'invisible': [('terralab_status', 'not in', ['submitted', 'rejected'])]}"/>
           <button name="action_terralab_calculate" string="Calculate TerraLab Test Results" type="object" attrs="{'invisible': [('terralab_status', '!=', 'accepted')]}"/>
           <button name="action_terralab_calculate" string="Recalculate TerraLab Test Results" type="object" attrs="{'invisible': [('terralab_status', '!=', 'calculated')]}"/>
-          <button name="action_terralab_generate_report" string="Generate TerraLab Report" type="object" attrs="{'invisible': [('terralab_status', '!=', 'calculated')]}"/>
-          <button name="action_terralab_complete" string="Complete TerraLab Order" type="object" attrs="{'invisible': [('terralab_status', '!=', 'report_generated')]}"/>
+          <button name="action_terralab_validate" string="Validate TerraLab Order" type="object" attrs="{'invisible': [('terralab_status', '!=', 'calculated')]}"/>
+          <button name="action_terralab_complete" string="Complete TerraLab Order" type="object" attrs="{'invisible': [('terralab_status', '!=', 'validated')]}"/>
         </header>
         <notebook position="inside">
 
@@ -26,6 +26,41 @@
               <label for="terralab_status" string="TerraLab Status"/>
               <div class="o_row" name="terralab_status">
                 <field name="terralab_status"/>
+              </div>
+
+              <label for="terralab_draft_date" string="Draft Date" attrs="{'invisible':[('terralab_draft_date', '=', False)]}"/>
+              <div class="o_row" name="terralab_draft_date" attrs="{'invisible':[('terralab_draft_date', '=', False)]}">
+                <field name="terralab_draft_date"/>
+              </div>
+
+              <label for="terralab_submitted_date" string="Submitted Date" attrs="{'invisible':[('terralab_submitted_date', '=', False)]}"/>
+              <div class="o_row" name="terralab_submitted_date" attrs="{'invisible':[('terralab_submitted_date', '=', False)]}">
+                <field name="terralab_submitted_date"/>
+              </div>
+
+              <label for="terralab_accepted_date" string="Accepted Date" attrs="{'invisible':[('terralab_accepted_date', '=', False)]}"/>
+              <div class="o_row" name="terralab_accepted_date" attrs="{'invisible':[('terralab_accepted_date', '=', False)]}">
+                <field name="terralab_accepted_date"/>
+              </div>
+
+              <label for="terralab_rejected_date" string="Rejected Date" attrs="{'invisible':[('terralab_rejected_date', '=', False)]}"/>
+              <div class="o_row" name="terralab_rejected_date" attrs="{'invisible':[('terralab_rejected_date', '=', False)]}">
+                <field name="terralab_rejected_date"/>
+              </div>
+
+              <label for="terralab_calculated_date" string="Calculated Date" attrs="{'invisible':[('terralab_calculated_date', '=', False)]}"/>
+              <div class="o_row" name="terralab_calculated_date" attrs="{'invisible':[('terralab_calculated_date', '=', False)]}">
+                <field name="terralab_calculated_date"/>
+              </div>
+
+              <label for="terralab_validated_date" string="Validated Date" attrs="{'invisible':[('terralab_validated_date', '=', False)]}"/>
+              <div class="o_row" name="terralab_validated_date" attrs="{'invisible':[('terralab_validated_date', '=', False)]}">
+                <field name="terralab_validated_date"/>
+              </div>
+
+              <label for="terralab_completed_date" string="Completed Date" attrs="{'invisible':[('terralab_completed_date', '=', False)]}"/>
+              <div class="o_row" name="terralab_completed_date" attrs="{'invisible':[('terralab_completed_date', '=', False)]}">
+                <field name="terralab_completed_date"/>
               </div>
 
               <label for="terralab_submitted_samples_count" string="Samples"/>
@@ -43,11 +78,6 @@
                 <field name="terralab_submitted_test_variables_count" readonly="1"/>
               </div>
 
-              <label for="terralab_submitted_reports_count" string="Reports"/>
-              <div class="o_row" name="terralab_submitted_reports_count">
-                <field name="terralab_submitted_reports_count" readonly="1"/>
-              </div>
-
             </group>
           </page>
 
@@ -56,45 +86,29 @@
               <tree string="TerraLab Samples">
                 <field name="sample_type" string="Sample Type"/>
                 <field name="serial_number" string="Serial Number"/>
-                <field name="order_line" string="Order Line"/>
               </tree>
             </field>
           </page>
 
           <page string="TerraLab Tests" name="terralab_submitted_tests">
-            <!-- Allow mass editing the test results, but not creating new submitted tests -->
-            <field name="terralab_submitted_tests" widget="one2many" mode="tree,kanban">
+            <field name="terralab_submitted_tests" widget="one2many" mode="tree,kanban" readonly="1">
               <tree string="TerraLab Tests">
                 <field name="test_type" string="Test Type"/>
                 <field name="submitted_sample" string="Sample"/>
                 <field name="test_result" string="Result"/>
                 <field name="test_result_uom" string="Result Unit"/>
+                <field name="order_line" string="Order Line"/>
               </tree>
             </field>
-            <xpath expr="//field[@name='terralab_submitted_tests']" position="attributes">
-              <attribute name="options">{"no_open":true,"no_create":true}</attribute>
-              <attribute name="widget">one2many</attribute>
-            </xpath>
           </page>
 
           <page string="TerraLab Test Variables" name="terralab_submitted_test_variables">
-            <!-- Allow mass editing the test variables, but not creating new submitted test variables -->
-            <field name="terralab_submitted_test_variables" widget="one2many" mode="tree,kanban">
+            <field name="terralab_submitted_test_variables" widget="one2many" mode="tree,kanban" readonly="1">
               <tree string="TerraLab Test Variables">
                 <field name="test_variable_type" string="Test Variable Type"/>
                 <field name="submitted_test" string="Test"/>
                 <field name="submitted_sample" string="Sample" />
                 <field name="value" string="Value"/>
-              </tree>
-            </field>
-          </page>
-
-          <page string="TerraLab Reports" name="terralab_submitted_reports">
-            <field name="terralab_submitted_reports" widget="one2many" mode="tree,kanban" readonly="1">
-              <tree string="TerraLab Reports">
-                <field name="generated_at" string="Generated At" />
-                <field name="report_type" string="Report Type" />
-                <field name="print_count" string="Print Count" />
               </tree>
             </field>
           </page>

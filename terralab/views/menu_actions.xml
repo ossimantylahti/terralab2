@@ -40,20 +40,6 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Menu action: Reports -->
-    <record model="ir.actions.act_window" id="terralab.report_types_list_action">
-      <field name="name">Terralab Report Types</field>
-      <field name="res_model">terralab.reporttype</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
-    <!-- Menu action: Debugging / All Submitted Reports -->
-    <record model="ir.actions.act_window" id="terralab.submitted_reports_list_action">
-      <field name="name"> All TerraLab Submitted Reports</field>
-      <field name="res_model">terralab.submittedreport</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
     <!-- Menu action: Debugging / All Submitted Samples -->
     <record model="ir.actions.act_window" id="terralab.submitted_samples_list_action">
       <field name="name">All TerraLab Submitted Samples</field>

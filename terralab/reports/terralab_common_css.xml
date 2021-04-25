@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+  <template id="terralab.common_css">
+    <!-- Common CSS for all TerraLab reports -->
+    <style>
+      .terralab-title {
+        font-size: 200%;
+      }
+      .list-group-item {
+        border-width: 2px;
+      }
+    </style>
+  </template>
+</odoo>

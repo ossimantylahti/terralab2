@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+  <report id="action_terralab_order_confirmation" string="TerraLab Order Confirmation" model="sale.order" report_type="qweb-pdf" name="terralab.order_confirmation" menu="True" />
+  <template id="terralab.order_confirmation">
+    <t t-call="web.html_container">
+      <t t-call="web.external_layout">
+        <t t-call="terralab.common_css"/>
+        <div class="page">
+          <t t-foreach="docs" t-as="o">
+            <t t-call="terralab.common_header">Order Confirmation</t>
+
+            <!-- Report content -->
+            <div class="mt-3">
+              TerraLab Order Confirmation Content
+            </div>
+            <!-- End report content -->
+
+            <t t-call="terralab.common_footer"/>
+          </t>
+        </div>
+      </t>
+    </t>
+  </template>
+</odoo>

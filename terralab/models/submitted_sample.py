@@ -13,7 +13,6 @@ class SubmittedSample(models.Model):
     test_products = fields.Many2many('product.template', track_visibility='onchange') # Assigned test products
     submitted_tests = fields.One2many('terralab.submittedtest', 'submitted_sample', 'Submitted Tests', track_visibility='onchange') # Submitted Sample may have many Submitted Tests attached to it
     order = fields.Many2one('sale.order', 'Order', track_visibility='onchange') # Submitted Sample is always attached to an Order
-    order_line = fields.Many2one('sale.orderline', 'Order Line', track_visibility='onchange') # Submitted Sample is automatically attached to an Order Line when creating or updating order
     serial_number = fields.Char(track_visibility='onchange') # Freeform serial number to identify submitted sample
 
     def name_get(self):

@@ -9,14 +9,12 @@
     <menuitem sequence="13" name="Tests" id="terralab.test_types_list_menuitem" parent="terralab.menu_root" action="terralab.test_types_list_action"/>
     <menuitem sequence="14" name="Samples" id="terralab.sample_types_list_menuitem" parent="terralab.menu_root" action="terralab.sample_types_list_action"/>
     <menuitem sequence="15" name="Spreadsheets" id="terralab.spreadsheets_list_menuitem" parent="terralab.menu_root" action="terralab.spreadsheets_list_action"/>
-    <menuitem sequence="16" name="Reports" id="terralab.report_types_list_menuitem" parent="terralab.menu_root" action="terralab.report_types_list_action"/>
-    <menuitem sequence="17" name="Debugging" id="terralab.debugging_menuitem" parent="terralab.menu_root"/>
+    <menuitem sequence="16" name="Debugging" id="terralab.debugging_menuitem" parent="terralab.menu_root"/>
 
     <!-- Terralab Debug Menu -->
-    <menuitem sequence="11" name="All Submitted Reports" id="terralab.submitted_reports_list_menuitem" parent="terralab.debugging_menuitem"  action="terralab.submitted_reports_list_action"/>
     <menuitem sequence="12" name="All Submitted Samples" id="terralab.submitted_samples_list_menuitem" parent="terralab.debugging_menuitem" action="terralab.submitted_samples_list_action"/>
-    <menuitem sequence="13" name="All Submitted Tests" id="terralab.submitted_tests_list_menuitem" parent="terralab.debugging_menuitem" action="terralab.submitted_tests_list_action"/>
-    <menuitem sequence="14" name="All Submitted Test Variables" id="terralab.submitted_test_variables_list_menuitem" parent="terralab.debugging_menuitem" action="terralab.submitted_test_variables_list_action"/>
-    <menuitem sequence="15" name="All Test Variable Types" id="terralab.test_variable_types_list_menuitem" parent="terralab.debugging_menuitem" action="terralab.test_variable_types_list_action"/>
+    <menuitem sequence="12" name="All Submitted Tests" id="terralab.submitted_tests_list_menuitem" parent="terralab.debugging_menuitem" action="terralab.submitted_tests_list_action"/>
+    <menuitem sequence="13" name="All Submitted Test Variables" id="terralab.submitted_test_variables_list_menuitem" parent="terralab.debugging_menuitem" action="terralab.submitted_test_variables_list_action"/>
+    <menuitem sequence="14" name="All Test Variable Types" id="terralab.test_variable_types_list_menuitem" parent="terralab.debugging_menuitem" action="terralab.test_variable_types_list_action"/>
   </data>
 </odoo>
