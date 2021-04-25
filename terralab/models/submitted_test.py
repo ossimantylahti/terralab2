@@ -40,7 +40,7 @@ class SubmittedTest(models.Model):
 
     # Calculate test result
     def calculate_test_result(self):
-        spreadsheet = self.test.spreadsheet
+        spreadsheet = self.test_type.spreadsheet
         result = spreadsheet.calculate_result(self.test_type, self.submitted_test_variables)
         self.write({
             'test_result': result,
