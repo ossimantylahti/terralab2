@@ -4,379 +4,702 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Terralab for Odoo 13.0\n"
+"Project-Id-Version: Odoo Server 13.0-20210318\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 02:13-0500\n"
-"PO-Revision-Date: 2021-04-25 02:15-0500\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2021-03-25 17:08+0000\n"
+"PO-Revision-Date: 2021-04-15 12:22-0500\n"
 "Language-Team: \n"
-"Language: es_MX\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.4.2\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-SearchPath-0: .\n"
+"Last-Translator: \n"
+"Language: es_MX\n"
 
-#: models/order.py:12
-msgid "Draft"
-msgstr "Borrador"
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.test_report_template
+msgid "<span class=\"glyphicon glyphicon-pushpin\"/> TerraLab Report"
+msgstr ""
+"<span class=\"glyphicon glyphicon-pushpin\"/> Informed de TerraLab"
 
-#: models/order.py:13
-msgid "Submitted"
-msgstr "Enviado"
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "Accept TerraLab Order"
+msgstr "Acepta el pedido"
 
-#: models/order.py:14
-msgid "Accepted"
-msgstr "Aceptado"
-
-#: models/order.py:15
-msgid "Rejected"
-msgstr "Rechazado"
-
-#: models/order.py:16
-msgid "Calculated"
-msgstr "Calculado"
-
-#: models/order.py:17
-msgid "Report Generated"
-msgstr "Informe generado"
-
-#: models/order.py:18
-msgid "Completed"
-msgstr "Listo"
-
-#: models/order.py:79
-msgid "Add at least one submitted sample"
-msgstr "Agregue al menos una muestra"
-
-#: models/order.py:88
-msgid "Submit order"
-msgstr "Envía el pedido"
-
-#: models/order.py:91
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#, python-format
 msgid "Accept or reject order"
 msgstr "Acepta o rechaza el pedido"
 
-#: models/order.py:94
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#: model:ir.model.fields.selection,name:terralab.selection__sale_order__terralab_status__accepted
+#, python-format
+msgid "Accepted"
+msgstr "Aceptado"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.accepted_orders_list_action
+#: model:ir.ui.menu,name:terralab.accepted_orders_list_menuitem
+msgid "Accepted Orders"
+msgstr "Acepta los pedidos"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "Add a Sample"
+msgstr "Elige la muestra"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+#: model_terms:ir.ui.view,arch_db:terralab.sample_form
+msgid "Add a Test"
+msgstr "Agrega la prueba"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.product_form_view
+msgid "Add a Test Variable Type"
+msgstr "Agrega el tipo de la variable de la prueba"
+
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#, python-format
+msgid "Add at least one sample"
+msgstr "Agregue al menos una muestra"
+
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#, python-format
+msgid "Add test variables for test %s"
+msgstr "Establece los variables para la prueba %s"
+
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#, python-format
+msgid "Add tests for sample %s"
+msgstr "Elige las pruebas para la muestra %s"
+
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#, python-format
+msgid "Add value for test variable %s"
+msgstr "Establece el valor para la variable %s"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.test_form
+msgid "Calculate TerraLab Test Result"
+msgstr "Calcula los resultados"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "Calculate TerraLab Test Results"
+msgstr "Calcula los resultados"
+
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#, python-format
 msgid "Calculate test results"
 msgstr "Calcula los resultados"
 
-#: models/order.py:97
-msgid "Generate report"
-msgstr "Genera el informe"
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#: model:ir.model.fields.selection,name:terralab.selection__sale_order__terralab_status__calculated
+#, python-format
+msgid "Calculated"
+msgstr "Calculado"
 
-#: models/order.py:100
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.calculated_orders_list_action
+#: model:ir.ui.menu,name:terralab.calculated_orders_list_menuitem
+msgid "Calculated Orders"
+msgstr "Pediodos calculados"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "Complete TerraLab Order"
+msgstr "Finaliza el pedido"
+
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#, python-format
 msgid "Complete order"
 msgstr "Finaliza el pedido"
 
-#: models/submitted_sample.py:25
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#: model:ir.model.fields.selection,name:terralab.selection__sale_order__terralab_status__completed
 #, python-format
-msgid "Set sample for submitted sample %s"
+msgid "Completed"
+msgstr "Listo"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.completed_orders_list_action
+#: model:ir.ui.menu,name:terralab.completed_orders_list_menuitem
+msgid "Completed Orders"
+msgstr "Pedidos completos"
+
+#. module: terralab
+#: model:ir.ui.menu,name:terralab.configuration_menuitem
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_report__create_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_sample__create_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__create_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__create_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_test__create_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__create_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_report__create_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_sample__create_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__create_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__create_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_test__create_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__create_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: terralab
+#: model:ir.ui.menu,name:terralab.debugging_menuitem
+msgid "Debugging"
+msgstr "Debugging"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_report__display_name
+#: model:ir.model.fields,field_description:terralab.field_terralab_sample__display_name
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__display_name
+#: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__display_name
+#: model:ir.model.fields,field_description:terralab.field_terralab_test__display_name
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__display_name
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#: model:ir.model.fields.selection,name:terralab.selection__sale_order__terralab_status__draft
+#, python-format
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.draft_orders_list_action
+#: model:ir.ui.menu,name:terralab.draft_orders_list_menuitem
+msgid "Draft Orders"
+msgstr "Pedidos preliminares"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.spreadsheet_form
+msgid ""
+"Enter URL like https://docs.google.com/spreadsheets/"
+"d/2xfaDdADadAGkIOwM2m413MdJgewtqblw41bao2vbq2c/edit"
+msgstr ""
+"Establece URL como https://docs.google.com/spreadsheets/"
+"d/2xfaDdADadAGkIOwM2m413MdJgewtqblw41bao2vbq2c/edit"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.spreadsheet_form
+msgid "Enter spreadsheet name"
+msgstr "El nombre de hoja de cálculo"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "Generate TerraLab Report"
+msgstr "Genera el informe"
+
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#, python-format
+msgid "Generate report"
+msgstr "Genera el informe"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_report__generated_at
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "Generated At"
+msgstr "Informe generado en"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_report__id
+#: model:ir.model.fields,field_description:terralab.field_terralab_sample__id
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__id
+#: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__id
+#: model:ir.model.fields,field_description:terralab.field_terralab_test__id
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__id
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__id
+msgid "ID"
+msgstr "ID"
+
+#. module: terralab
+#: model:ir.ui.menu,name:terralab.laboratory_menuitem
+msgid "Laboratory"
+msgstr "Laboratorio"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_report____last_update
+#: model:ir.model.fields,field_description:terralab.field_terralab_sample____last_update
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype____last_update
+#: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet____last_update
+#: model:ir.model.fields,field_description:terralab.field_terralab_test____last_update
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable____last_update
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_report__write_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_sample__write_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__write_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__write_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_test__write_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__write_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_report__write_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_sample__write_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__write_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__write_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_test__write_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__write_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__write_date
+msgid "Last Updated on"
+msgstr "Última actualización"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__name
+#: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__name
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__name
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__name
+#: model_terms:ir.ui.view,arch_db:terralab.product_form_view
+msgid "Name"
+msgstr "Nombre"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_report__order
+#: model:ir.model.fields,field_description:terralab.field_terralab_sample__order
+msgid "Order"
+msgstr "Pedido"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_form
+msgid "Order Form"
+msgstr "Tramite de pedido"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__order_name
+msgid "Order Name"
+msgstr "Nombre de pedido"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_tree
+msgid "Order Number"
+msgstr "Número de pedido"
+
+#. module: terralab
+#: model:ir.model,name:terralab.model_product_template
+msgid "Product Template"
+msgstr "Machote de producto"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "Recalculate TerraLab Test Results"
+msgstr "Calcula los resultados"
+
+#. module: terralab
+#: model:ir.ui.menu,name:terralab.reception_menuitem
+msgid "Reception"
+msgstr "Recepción"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.product_form_view
+msgid "Reference like Sheet1!A1"
+msgstr "Dirección en la hoja, i.e. Sheet1!A1"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "Reject TerraLab Order"
+msgstr "Acepta o rechaza el pedido"
+
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#: model:ir.model.fields.selection,name:terralab.selection__sale_order__terralab_status__rejected
+#, python-format
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.rejected_orders_list_action
+#: model:ir.ui.menu,name:terralab.rejected_orders_list_menuitem
+msgid "Rejected Orders"
+msgstr "Ordenes rechazados"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.report_form
+msgid "Report Form"
+msgstr "El informe"
+
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#: model:ir.model.fields.selection,name:terralab.selection__sale_order__terralab_status__report_generated
+#, python-format
+msgid "Report Generated"
+msgstr "Informe generado"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.report_generated_orders_list_action
+#: model:ir.ui.menu,name:terralab.report_generated_orders_list_menuitem
+msgid "Report Generated Orders"
+msgstr "Informe sobre ordenes"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.reports_list_action
+#: model:ir.ui.menu,name:terralab.reports_list_menuitem
+msgid "Reports"
+msgstr "Informs"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "Reset to TerraLab Draft"
+msgstr "Cambia al borrador"
+
+#. module: terralab
+#: model:ir.model,name:terralab.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_test__sample
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__sample
+msgid "Sample"
+msgstr "Muestra"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.sample_form
+msgid "Sample Form"
+msgstr "Formulario de muestra"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.sample_form
+msgid "Sample Settings"
+msgstr "Configuración de muestra"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.sample_form
+msgid "Sample Tests"
+msgstr "Pruebas de muestra"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_sample__sample_type
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+#: model_terms:ir.ui.view,arch_db:terralab.product_form_view
+msgid "Sample Type"
+msgstr "Tipo de muestra"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.sampletype_form
+msgid "Sample Type Form"
+msgstr "Formulario de tipo de muestra"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.sampletypes_list_action
+#: model:ir.ui.menu,name:terralab.sampletypes_list_menuitem
+msgid "Sample Types"
+msgstr "Tipos de muestras"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.samples_list_action
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__samples
+#: model:ir.ui.menu,name:terralab.samples_list_menuitem
+msgid "Samples"
+msgstr "Muestras"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_sample__serial_number
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "Serial Number"
+msgstr "Número de serie"
+
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#, python-format
+msgid "Set sample type for sample %s"
 msgstr "Elige el tipo para la muestra %s"
 
-#: models/submitted_sample.py:27
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
 #, python-format
-msgid "Set serial number for submitted sample %s"
+msgid "Set serial number for sample %s"
 msgstr "Establecer el número de serie para la muestra %s"
 
-#: models/submitted_sample.py:29
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__spreadsheet_id
+#: model_terms:ir.ui.view,arch_db:terralab.product_form_view
+msgid "Spreadsheet"
+msgstr "Hoja de cálculo"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.spreadsheet_form
+msgid "Spreadsheet Form"
+msgstr "Formulario de hoja de cálculo"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.spreadsheet_form
+msgid "Spreadsheet ID"
+msgstr "ID en hoja de cálculo"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__spreadsheet_input_ref
+msgid "Spreadsheet Input Ref"
+msgstr "El fuente en hoja de cálculo"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.product_form_view
+msgid "Spreadsheet Result Ref"
+msgstr "El resultado en hoja de cálculo"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.spreadsheet_form
+msgid "Spreadsheet URL"
+msgstr "URL de hoja de cálculo"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__spreadsheet_url
+msgid "Spreadsheet Url"
+msgstr "URL de hoja de cálculo"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.spreadsheets_list_action
+#: model:ir.ui.menu,name:terralab.spreadsheets_list_menuitem
+msgid "Spreadsheets"
+msgstr "Hojas de calculos"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "Submit TerraLab Order"
+msgstr "Envía el pedido"
+
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
 #, python-format
-msgid "Add submitted tests for submitted sample %s"
-msgstr "Elige las pruebas para la muestra %s"
+msgid "Submit order"
+msgstr "Envía el pedido"
 
-#: models/submitted_test.py:33
+#. module: terralab
+#: code:addons/terralab/models/models.py:0
+#: model:ir.model.fields.selection,name:terralab.selection__sale_order__terralab_status__submitted
 #, python-format
-msgid "Add submitted test variables for submitted test %s"
-msgstr "Establece los cambiantes para la prueba %s"
-
-#: models/submitted_test_variable.py:43
-#, python-format
-msgid "Add value for submitted test variable %s"
-msgstr "Establece el valor para el cambiante %s"
-
-#~ msgid "<span class=\"glyphicon glyphicon-pushpin\"/> TerraLab Report"
-#~ msgstr "<span class=\"glyphicon glyphicon-pushpin\"/> Informed de TerraLab"
-
-#~ msgid "Accept TerraLab Order"
-#~ msgstr "Acepta el pedido"
-
-#~ msgid "Accepted Orders"
-#~ msgstr "Acepta los pedidos"
-
-#~ msgid "Add a Sample"
-#~ msgstr "Elige la muestra"
-
-#~ msgid "Add a Test"
-#~ msgstr "Agrega la prueba"
-
-#~ msgid "Add a Test Variable Type"
-#~ msgstr "Agrega el tipo de la variable de la prueba"
-
-#~ msgid "Calculate TerraLab Test Result"
-#~ msgstr "Calcula los resultados"
-
-#~ msgid "Calculate TerraLab Test Results"
-#~ msgstr "Calcula los resultados"
-
-#~ msgid "Calculated Orders"
-#~ msgstr "Pediodos calculados"
-
-#~ msgid "Complete TerraLab Order"
-#~ msgstr "Finaliza el pedido"
-
-#~ msgid "Completed Orders"
-#~ msgstr "Pedidos completos"
-
-#~ msgid "Configuration"
-#~ msgstr "Configuración"
-
-#~ msgid "Created by"
-#~ msgstr "Creado por"
-
-#~ msgid "Created on"
-#~ msgstr "Creado"
-
-#~ msgid "Debugging"
-#~ msgstr "Debugging"
-
-#~ msgid "Display Name"
-#~ msgstr "Nombre"
-
-#~ msgid "Draft Orders"
-#~ msgstr "Pedidos preliminares"
-
-#~ msgid "Enter URL like https://docs.google.com/spreadsheets/d/2xfaDdADadAGkIOwM2m413MdJgewtqblw41bao2vbq2c/edit"
-#~ msgstr "Establece URL como https://docs.google.com/spreadsheets/d/2xfaDdADadAGkIOwM2m413MdJgewtqblw41bao2vbq2c/edit"
-
-#~ msgid "Enter spreadsheet name"
-#~ msgstr "El nombre de hoja de cálculo"
-
-#~ msgid "Generate TerraLab Report"
-#~ msgstr "Genera el informe"
-
-#~ msgid "Generated At"
-#~ msgstr "Informe generado en"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Laboratory"
-#~ msgstr "Laboratorio"
-
-#~ msgid "Last Modified on"
-#~ msgstr "Última modificación el"
-
-#~ msgid "Last Updated by"
-#~ msgstr "Última actualización por"
-
-#~ msgid "Last Updated on"
-#~ msgstr "Última actualización"
-
-#~ msgid "Name"
-#~ msgstr "Nombre"
-
-#~ msgid "Order"
-#~ msgstr "Pedido"
-
-#~ msgid "Order Form"
-#~ msgstr "Tramite de pedido"
-
-#~ msgid "Order Name"
-#~ msgstr "Nombre de pedido"
-
-#~ msgid "Order Number"
-#~ msgstr "Número de pedido"
-
-#~ msgid "Product Template"
-#~ msgstr "Machote de producto"
-
-#~ msgid "Recalculate TerraLab Test Results"
-#~ msgstr "Calcula los resultados"
-
-#~ msgid "Reception"
-#~ msgstr "Recepción"
-
-#~ msgid "Reference like Sheet1!A1"
-#~ msgstr "Dirección en la hoja, i.e. Sheet1!A1"
-
-#~ msgid "Reject TerraLab Order"
-#~ msgstr "Acepta o rechaza el pedido"
-
-#~ msgid "Rejected Orders"
-#~ msgstr "Ordenes rechazados"
-
-#~ msgid "Report Form"
-#~ msgstr "El informe"
-
-#~ msgid "Report Generated Orders"
-#~ msgstr "Informe sobre ordenes"
-
-#~ msgid "Reports"
-#~ msgstr "Informs"
-
-#~ msgid "Reset to TerraLab Draft"
-#~ msgstr "Cambia al borrador"
-
-#~ msgid "Sales Order"
-#~ msgstr "Pedido"
-
-#~ msgid "Sample"
-#~ msgstr "Muestra"
-
-#~ msgid "Sample Form"
-#~ msgstr "Formulario de muestra"
-
-#~ msgid "Sample Settings"
-#~ msgstr "Configuración de muestra"
-
-#~ msgid "Sample Tests"
-#~ msgstr "Pruebas de muestra"
-
-#~ msgid "Sample Type"
-#~ msgstr "Tipo de muestra"
-
-#~ msgid "Sample Type Form"
-#~ msgstr "Formulario de tipo de muestra"
-
-#~ msgid "Sample Types"
-#~ msgstr "Tipos de muestras"
-
-#~ msgid "Samples"
-#~ msgstr "Muestras"
-
-#~ msgid "Serial Number"
-#~ msgstr "Número de serie"
-
-#~ msgid "Spreadsheet"
-#~ msgstr "Hoja de cálculo"
-
-#~ msgid "Spreadsheet Form"
-#~ msgstr "Formulario de hoja de cálculo"
-
-#~ msgid "Spreadsheet ID"
-#~ msgstr "ID en hoja de cálculo"
-
-#~ msgid "Spreadsheet Input Ref"
-#~ msgstr "El fuente en hoja de cálculo"
-
-#~ msgid "Spreadsheet Result Ref"
-#~ msgstr "El resultado en hoja de cálculo"
-
-#~ msgid "Spreadsheet URL"
-#~ msgstr "URL de hoja de cálculo"
-
-#~ msgid "Spreadsheet Url"
-#~ msgstr "URL de hoja de cálculo"
-
-#~ msgid "Spreadsheets"
-#~ msgstr "Hojas de calculos"
-
-#~ msgid "Submit TerraLab Order"
-#~ msgstr "Envía el pedido"
-
-#~ msgid "Submitted Orders"
-#~ msgstr "Pedidos enviados"
-
-#~ msgid "TerraLab"
-#~ msgstr "Terralab"
-
-#~ msgid "TerraLab Report"
-#~ msgstr "Informe de Terralab"
-
-#~ msgid "TerraLab Reports"
-#~ msgstr "Informes de Terralab"
-
-#~ msgid "TerraLab Sample"
-#~ msgstr "Muestra de Terralab"
-
-#~ msgid "TerraLab Sample Type"
-#~ msgstr "Terralab tipo de muestra"
-
-#~ msgid "TerraLab Samples"
-#~ msgstr "Muestras de Terralab"
-
-#~ msgid "TerraLab Settings"
-#~ msgstr "Configuración de Terralab"
-
-#~ msgid "TerraLab Spreadsheet"
-#~ msgstr "Hoja de cálculo de Terralab"
-
-#~ msgid "TerraLab Status"
-#~ msgstr "Estatus de Terralab"
-
-#~ msgid "TerraLab Test"
-#~ msgstr "Prueba de Terralab"
-
-#~ msgid "TerraLab Test Variable"
-#~ msgstr "Variable de prueba de Terralab"
-
-#~ msgid "TerraLab Test Variable Type"
-#~ msgstr "Tipo de variable de prueba"
-
-#~ msgid "TerraLab Test Variable Types"
-#~ msgstr "Tipos de variables de pruebas"
-
-#~ msgid "TerraLab Test Variables"
-#~ msgstr "Terralab variables de prueba"
-
-#~ msgid "TerraLab TestVariable Types"
-#~ msgstr "Terralab tipos de variables de prueba"
-
-#~ msgid "Terralab Next Action"
-#~ msgstr "Terralab Proxima accion"
-
-#~ msgid "Terralab Spreadsheet Result Ref"
-#~ msgstr "Resultado en hoja de cálculo"
-
-#~ msgid "Terralab Test Name"
-#~ msgstr "Terralab nombre de prueba"
-
-#~ msgid "Test"
-#~ msgstr "Prueba"
-
-#~ msgid "Test Form"
-#~ msgstr "Formulario de prueba"
-
-#~ msgid "Test Name"
-#~ msgstr "Nombre de prueba"
-
-#~ msgid "Test Result"
-#~ msgstr "Resultado de prueba"
-
-#~ msgid "Test Settings"
-#~ msgstr "Configuración de prueba"
-
-#~ msgid "Test Type"
-#~ msgstr "Tipo de prueba"
-
-#~ msgid "Test Types"
-#~ msgstr "Tipos de pruebas"
-
-#~ msgid "Test Variable Form"
-#~ msgstr "Formulario de variable de prueba"
-
-#~ msgid "Test Variable Type"
-#~ msgstr "Tipo de variable de prueba"
-
-#~ msgid "Test Variable Type Form"
-#~ msgstr "Formulario de tipo de variable de prueba"
-
-#~ msgid "Test Variable Types"
-#~ msgstr "Tipos de variables de pruebas"
-
-#~ msgid "Test Variables"
-#~ msgstr "Variables de pruebas"
-
-#~ msgid "Tests"
-#~ msgstr "Pruebas"
-
-#~ msgid "Value"
-#~ msgstr "Valos"
-
-#~ msgid "View TerraLab Test Variables"
-#~ msgstr "Ver variables de prueba"
-
-#~ msgid "View TerraLab Tests"
-#~ msgstr "Ver las pruebas"
+msgid "Submitted"
+msgstr "Enviado"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.submitted_orders_list_action
+#: model:ir.ui.menu,name:terralab.submitted_orders_list_menuitem
+msgid "Submitted Orders"
+msgstr "Pedidos enviados"
+
+#. module: terralab
+#: model:ir.ui.menu,name:terralab.menu_root
+msgid "TerraLab"
+msgstr "Terralab"
+
+#. module: terralab
+#: model:ir.actions.report,name:terralab.action_terralab_test_report
+#: model:ir.model,name:terralab.model_terralab_report
+msgid "TerraLab Report"
+msgstr "Informe de Terralab"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_reports
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "TerraLab Reports"
+msgstr "Informes de Terralab"
+
+#. module: terralab
+#: model:ir.model,name:terralab.model_terralab_sample
+msgid "TerraLab Sample"
+msgstr "Muestra de Terralab"
+
+#. module: terralab
+#: model:ir.model,name:terralab.model_terralab_sampletype
+#: model:ir.model.fields,field_description:terralab.field_product_product__terralab_sample_type
+#: model:ir.model.fields,field_description:terralab.field_product_template__terralab_sample_type
+msgid "TerraLab Sample Type"
+msgstr "Terralab tipo de muestra"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_samples
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "TerraLab Samples"
+msgstr "Muestras de Terralab"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.product_form_view
+msgid "TerraLab Settings"
+msgstr "Configuración de Terralab"
+
+#. module: terralab
+#: model:ir.model,name:terralab.model_terralab_spreadsheet
+#: model:ir.model.fields,field_description:terralab.field_product_product__terralab_spreadsheet
+#: model:ir.model.fields,field_description:terralab.field_product_template__terralab_spreadsheet
+msgid "TerraLab Spreadsheet"
+msgstr "Hoja de cálculo de Terralab"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_status
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "TerraLab Status"
+msgstr "Estatus de Terralab"
+
+#. module: terralab
+#: model:ir.model,name:terralab.model_terralab_test
+msgid "TerraLab Test"
+msgstr "Prueba de Terralab"
+
+#. module: terralab
+#: model:ir.model,name:terralab.model_terralab_testvariable
+msgid "TerraLab Test Variable"
+msgstr "Variable de prueba de Terralab"
+
+#. module: terralab
+#: model:ir.model,name:terralab.model_terralab_testvariabletype
+msgid "TerraLab Test Variable Type"
+msgstr "Tipo de variable de prueba"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.product_form_view
+msgid "TerraLab Test Variable Types"
+msgstr "Tipos de variables de pruebas"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.test_form
+msgid "TerraLab Test Variables"
+msgstr "Terralab variables de prueba"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_product_product__terralab_test_variable_types
+#: model:ir.model.fields,field_description:terralab.field_product_template__terralab_test_variable_types
+msgid "TerraLab TestVariable Types"
+msgstr "Terralab tipos de variables de prueba"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_next_action
+msgid "Terralab Next Action"
+msgstr "Terralab Proxima accion"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_product_product__terralab_spreadsheet_result_ref
+#: model:ir.model.fields,field_description:terralab.field_product_template__terralab_spreadsheet_result_ref
+msgid "Terralab Spreadsheet Result Ref"
+msgstr "Resultado en hoja de cálculo"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_product_product__terralab_test_name
+#: model:ir.model.fields,field_description:terralab.field_product_template__terralab_test_name
+msgid "Terralab Test Name"
+msgstr "Terralab nombre de prueba"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__test
+msgid "Test"
+msgstr "Prueba"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.test_form
+msgid "Test Form"
+msgstr "Formulario de prueba"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.product_form_view
+msgid "Test Name"
+msgstr "Nombre de prueba"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_test__test_result
+#: model_terms:ir.ui.view,arch_db:terralab.test_report_template
+msgid "Test Result"
+msgstr "Resultado de prueba"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.test_form
+msgid "Test Settings"
+msgstr "Configuración de prueba"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_test__test_type
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__test_type
+msgid "Test Type"
+msgstr "Tipo de prueba"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.testtypes_list_action
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__test_types
+#: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__test_types
+#: model:ir.ui.menu,name:terralab.testtypes_list_menuitem
+msgid "Test Types"
+msgstr "Tipos de pruebas"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.testvariable_form
+msgid "Test Variable Form"
+msgstr "Formulario de variable de prueba"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__test_variable_type
+msgid "Test Variable Type"
+msgstr "Tipo de variable de prueba"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.testvariabletype_form
+msgid "Test Variable Type Form"
+msgstr "Formulario de tipo de variable de prueba"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.testvariabletypes_list_action
+#: model:ir.ui.menu,name:terralab.testvariabletypes_list_menuitem
+msgid "Test Variable Types"
+msgstr "Tipos de variables de pruebas"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.testvariables_list_action
+#: model:ir.model.fields,field_description:terralab.field_terralab_test__test_variables
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__test_variables
+#: model:ir.ui.menu,name:terralab.testvariables_list_menuitem
+#: model_terms:ir.ui.view,arch_db:terralab.test_form
+#: model_terms:ir.ui.view,arch_db:terralab.test_report_template
+msgid "Test Variables"
+msgstr "Variables de pruebas"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.tests_list_action
+#: model:ir.model.fields,field_description:terralab.field_terralab_sample__tests
+#: model:ir.ui.menu,name:terralab.tests_list_menuitem
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+#: model_terms:ir.ui.view,arch_db:terralab.sample_form
+msgid "Tests"
+msgstr "Pruebas"
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__value
+msgid "Value"
+msgstr "Valos"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "View TerraLab Test Variables"
+msgstr "Ver variables de prueba"
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "View TerraLab Tests"
+msgstr "Ver las pruebas"
