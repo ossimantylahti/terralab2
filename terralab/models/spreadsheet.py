@@ -23,7 +23,7 @@ class Spreadsheet(models.Model):
     spreadsheet_id = fields.Char(track_visibility='onchange')
     test_types = fields.One2many('terralab.testtype', 'spreadsheet', 'Test Types', track_visibility='onchange') # Test Types attached to this spreadsheet
 
-def create
+    # def create
 
     def write(self, values):
         new_url = values.get('spreadsheet_url', None)
