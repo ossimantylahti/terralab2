@@ -14,7 +14,7 @@ class Order(models.Model):
         ('accepted', _('Accepted')),
         ('rejected', _('Rejected')),
         ('calculated', _('Calculated')),
-        ('report_generated', _('Report Generated')),
+        ('validated', _('Validated')),
         ('completed', _('Completed')),
     ], string='TerraLab Status', default=None)
 
@@ -108,7 +108,7 @@ class Order(models.Model):
         # Do we already have a submitted test with same parameters?
         submitted_test = None
         for existing_submitted_test in self.terralab_submitted_tests:
-            if existing_submitted_test.test.id == terralab_test_type.id and existing_submitted_test.submitted_sample.id == submitted_sample.id:
+            if existing_submitted_test.test_type.id == terralab_test_type.id and existing_submitted_test.submitted_sample.id == submitted_sample.id:
                 submitted_test = existing_submitted_test
         if not submitted_test:
             # Create Submitted Test

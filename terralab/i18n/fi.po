@@ -32,42 +32,42 @@ msgstr ""
 #. module: terralab
 #: model:ir.actions.act_window,name:terralab.submitted_reports_list_action
 msgid " All TerraLab Submitted Reports"
-msgstr " Kaikki lähetetyt Terralab-raportit"
+msgstr " Kaikki lähetetyt TerraLab-raportit"
 
 #. module: terralab
 #: model:ir.actions.report,print_report_name:terralab.action_print_terralab_test_report_2
 msgid "'TerraLab Test Report 2'"
-msgstr "Terralab testiraportti 2"
+msgstr "TerraLab testiraportti 2"
 
 #. module: terralab
 #: model:ir.actions.report,print_report_name:terralab.action_print_terralab_test_report_3
 msgid "'TerraLab Test Report 3'"
-msgstr "Terralab testiraportti 3"
+msgstr "TerraLab testiraportti 3"
 
 #. module: terralab
 #: model:ir.actions.report,print_report_name:terralab.action_print_terralab_test_report
 msgid "'TerraLab Test Report'"
-msgstr "Terralab testiraportti"
+msgstr "TerraLab testiraportti"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.test_report_template
 msgid "<span class=\"glyphicon glyphicon-pushpin\"/> TerraLab Report"
-msgstr "<span class=\"glyphicon glyphicon-pushpin\"/> Terralab raportti"
+msgstr "<span class=\"glyphicon glyphicon-pushpin\"/> TerraLab raportti"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.test_report_template_2
 msgid "<span class=\"glyphicon glyphicon-pushpin\"/> TerraLab Report 2"
-msgstr "<span class=\"glyphicon glyphicon-pushpin\"/> Terralab raportti 2"
+msgstr "<span class=\"glyphicon glyphicon-pushpin\"/> TerraLab raportti 2"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.test_report_template_3
 msgid "<span class=\"glyphicon glyphicon-pushpin\"/> TerraLab Report 3"
-msgstr "<span class=\"glyphicon glyphicon-pushpin\"/> Terralab raportti 3"
+msgstr "<span class=\"glyphicon glyphicon-pushpin\"/> TerraLab raportti 3"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Accept TerraLab Order"
-msgstr "Hyväksy Terralab-tilaus"
+msgstr "Hyväksy TerraLab-tilaus"
 
 #. module: terralab
 #: code:addons/terralab/models/order.py:0
@@ -122,7 +122,7 @@ msgstr "Lisää arvo määritellylle testimuuttujalle %s"
 #. module: terralab
 #: model:ir.ui.menu,name:terralab.submitted_reports_list_menuitem
 msgid "All Submitted Reports"
-msgstr ""
+msgstr "Kaikki toimitetut raportit"
 
 #. module: terralab
 #: model:ir.ui.menu,name:terralab.submitted_samples_list_menuitem
@@ -142,27 +142,27 @@ msgstr "Kaikki annetut testit"
 #. module: terralab
 #: model:ir.actions.act_window,name:terralab.submitted_samples_list_action
 msgid "All TerraLab Submitted Samples"
-msgstr ""
+msgstr "Kaikki TerraLabin toimitetut näytteet"
 
 #. module: terralab
 #: model:ir.actions.act_window,name:terralab.submitted_test_variables_list_action
 msgid "All TerraLab Submitted Test Variables"
-msgstr ""
+msgstr "Kaikki TerraLabin toimitetut testimuuttujat"
 
 #. module: terralab
 #: model:ir.actions.act_window,name:terralab.submitted_tests_list_action
 msgid "All TerraLab Submitted Tests"
-msgstr ""
+msgstr "Kaikki TerraLabin toimitetut testit"
 
 #. module: terralab
 #: model:ir.actions.act_window,name:terralab.test_variable_types_list_action
 msgid "All TerraLab Test Variable Types"
-msgstr ""
+msgstr "Kaikki TerraLabin testimuuttujatyypit"
 
 #. module: terralab
 #: model:ir.ui.menu,name:terralab.test_variable_types_list_menuitem
 msgid "All Test Variable Types"
-msgstr ""
+msgstr "Kaikki testimuuttujatyypit"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_attachment_count
@@ -180,12 +180,12 @@ msgstr "Liitteiden lukumäärä"
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.submitted_test_form
 msgid "Calculate TerraLab Test Result"
-msgstr "Laske Terralabin testitulos"
+msgstr "Laske TerraLabin testitulos"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Calculate TerraLab Test Results"
-msgstr "Laske Terralabin testitulokset"
+msgstr "Laske TerraLabin testitulokset"
 
 #. module: terralab
 #: code:addons/terralab/models/order.py:0
@@ -203,7 +203,7 @@ msgstr "Laskettu"
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Complete TerraLab Order"
-msgstr "Viimeistele Terralabin tilaus"
+msgstr "Viimeistele TerraLabin tilaus"
 
 #. module: terralab
 #: code:addons/terralab/models/order.py:0
@@ -247,7 +247,7 @@ msgstr "Luontiaika"
 #. module: terralab
 #: model:ir.ui.menu,name:terralab.debugging_menuitem
 msgid "Debugging"
-msgstr ""
+msgstr "Debuggaus"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__display_name
@@ -330,7 +330,7 @@ msgstr "Yleinen"
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Generate TerraLab Report"
-msgstr "Luo Terralab-raportti"
+msgstr "Luo TerraLab-raportti"
 
 #. module: terralab
 #: code:addons/terralab/models/order.py:0
@@ -611,22 +611,22 @@ msgstr "Tulosta määrä"
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.submitted_report_form
 msgid "Print Report"
-msgstr ""
+msgstr "Tulosta raportti"
 
 #. module: terralab
 #: model:ir.actions.report,name:terralab.action_print_terralab_test_report
 msgid "Print TerraLab Test Report"
-msgstr "Tulosta Terralab-testiraportti"
+msgstr "Tulosta TerraLab-testiraportti"
 
 #. module: terralab
 #: model:ir.actions.report,name:terralab.action_print_terralab_test_report_2
 msgid "Print TerraLab Test Report 2"
-msgstr "Tulosta Terralab-testiraportti 2"
+msgstr "Tulosta TerraLab-testiraportti 2"
 
 #. module: terralab
 #: model:ir.actions.report,name:terralab.action_print_terralab_test_report_3
 msgid "Print TerraLab Test Report 3"
-msgstr "Tulosta Terralab-testiraportti 3"
+msgstr "Tulosta TerraLab-testiraportti 3"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.product_tree
@@ -647,7 +647,7 @@ msgstr "Tuotteet"
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Recalculate TerraLab Test Results"
-msgstr "Laske uudelleen Terralabin tulokset"
+msgstr "Laske uudelleen TerraLabin tulokset"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.test_form_view
@@ -657,7 +657,7 @@ msgstr "Viittaus muodossa Sheet1!A1"
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Reject TerraLab Order"
-msgstr "Hylkää Terralab-tilaus"
+msgstr "Hylkää TerraLab-tilaus"
 
 #. module: terralab
 #: code:addons/terralab/models/order.py:0
@@ -669,12 +669,12 @@ msgstr "Hylätty"
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__report_action
 msgid "Report Action"
-msgstr ""
+msgstr "Raporttitoiminto"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.submitted_report_form
 msgid "Report Form"
-msgstr ""
+msgstr "Raporttilomake"
 
 #. module: terralab
 #: code:addons/terralab/models/order.py:0
@@ -687,12 +687,12 @@ msgstr "Raportti luotu"
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__report_type
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Report Type"
-msgstr ""
+msgstr "Raportin tyyppi"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.reporttype_form
 msgid "Report Type Form"
-msgstr ""
+msgstr "Raportin tyyppilomake"
 
 #. module: terralab
 #: model:ir.ui.menu,name:terralab.report_types_list_menuitem
@@ -704,7 +704,7 @@ msgstr "Raportit"
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Reset to TerraLab Draft"
-msgstr "Muunna Terralabin vedokseksi"
+msgstr "Muunna TerraLabin vedokseksi"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
@@ -756,12 +756,12 @@ msgstr "Näytteen asetukset"
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 #: model_terms:ir.ui.view,arch_db:terralab.test_form_view
 msgid "Sample Type"
-msgstr ""
+msgstr "Näytetyyppi"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.sampletype_form
 msgid "Sample Type Form"
-msgstr ""
+msgstr "Näytetyypin lomake"
 
 #. module: terralab
 #: model:ir.ui.menu,name:terralab.sample_types_list_menuitem
@@ -780,7 +780,7 @@ msgstr "Sarjanumero"
 #: code:addons/terralab/models/submitted_sample.py:0
 #, python-format
 msgid "Set sample type for submitted sample %s"
-msgstr ""
+msgstr "Valitse näytetyyppi näytteelle %s"
 
 #. module: terralab
 #: code:addons/terralab/models/submitted_sample.py:0
@@ -835,7 +835,7 @@ msgstr "Taulukkolaskennat"
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Submit TerraLab Order"
-msgstr "Lähetä Terralab-tilaus"
+msgstr "Lähetä TerraLab-tilaus"
 
 #. module: terralab
 #: code:addons/terralab/models/order.py:0
@@ -853,7 +853,7 @@ msgstr "Lähtetty"
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__submitted_reports
 msgid "Submitted Reports"
-msgstr ""
+msgstr "Toimitetut raportit"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__submitted_sample
@@ -869,7 +869,7 @@ msgstr "Lähetetty näytelomake"
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__submitted_samples
 msgid "Submitted Samples"
-msgstr ""
+msgstr "Toimitetut näytteet"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__submitted_test
@@ -907,211 +907,211 @@ msgstr "Lähetetyt testit"
 #: model:ir.ui.menu,name:terralab.menu_root
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "TerraLab"
-msgstr "Terralab"
+msgstr "TerraLab"
 
 #. module: terralab
 #: model:ir.actions.act_window,name:terralab.products_list_action
 msgid "TerraLab Products"
-msgstr "Terralab-tuotteet"
+msgstr "TerraLab-tuotteet"
 
 #. module: terralab
 #: model:ir.actions.report,name:terralab.action_terralab_test_report
 #: model_terms:ir.ui.view,arch_db:terralab.submitted_report_form
 msgid "TerraLab Report"
-msgstr "Terralab-raportti"
+msgstr "TerraLab-raportti"
 
 #. module: terralab
 #: model:ir.actions.report,name:terralab.action_terralab_test_report_2
 msgid "TerraLab Report 2"
-msgstr "Terralab-raportti 2"
+msgstr "TerraLab-raportti 2"
 
 #. module: terralab
 #: model:ir.actions.report,name:terralab.action_terralab_test_report_3
 msgid "TerraLab Report 3"
-msgstr "Terralab-raportti 3"
+msgstr "TerraLab-raportti 3"
 
 #. module: terralab
 #: model:ir.model,name:terralab.model_terralab_reporttype
 msgid "TerraLab Report Type"
-msgstr ""
+msgstr "TerraLab-raporttityyppi"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_reports
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "TerraLab Reports"
-msgstr "Terralab-raportit"
+msgstr "TerraLab-raportit"
 
 #. module: terralab
 #: model:ir.model,name:terralab.model_terralab_sampletype
 msgid "TerraLab Sample Type"
-msgstr ""
+msgstr "TerraLab-näytetyyppi"
 
 #. module: terralab
 #: model:ir.actions.act_window,name:terralab.sample_types_list_action
 msgid "TerraLab Sample Types"
-msgstr ""
+msgstr "TerraLab-näytetyypit"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_samples
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "TerraLab Samples"
-msgstr "Terralab-näytteet"
+msgstr "TerraLab-näytteet"
 
 #. module: terralab
 #: model:ir.model,name:terralab.model_terralab_spreadsheet
 msgid "TerraLab Spreadsheet"
-msgstr "Terralab-taulukkolaskenta"
+msgstr "TerraLab-taulukkolaskenta"
 
 #. module: terralab
 #: model:ir.actions.act_window,name:terralab.spreadsheets_list_action
 msgid "TerraLab Spreadsheets"
-msgstr "Terralab-taulukkolaskennat"
+msgstr "TerraLab-taulukkolaskennat"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_status
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "TerraLab Status"
-msgstr "Terralab Status"
+msgstr "TerraLab Status"
 
 #. module: terralab
 #: model:ir.model,name:terralab.model_terralab_submittedreport
 msgid "TerraLab Submitted Report"
-msgstr ""
+msgstr "TerraLabin toimitettu raportti"
 
 #. module: terralab
 #: model:ir.model,name:terralab.model_terralab_submittedsample
 msgid "TerraLab Submitted Sample"
-msgstr "Terralab toimitettu näyte"
+msgstr "TerraLabin toimitettu näyte"
 
 #. module: terralab
 #: model:ir.model,name:terralab.model_terralab_submittedtest
 msgid "TerraLab Submitted Test"
-msgstr "Terralab toimitettu testi"
+msgstr "TerraLabin toimitettu testi"
 
 #. module: terralab
 #: model:ir.model,name:terralab.model_terralab_submittedtestvariable
 msgid "TerraLab Submitted Test Variable"
-msgstr "Terralab toimitettu testimuuttuja"
+msgstr "TerraLabin toimitettu testimuuttuja"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.submitted_test_form
 msgid "TerraLab Submitted Test Variables"
-msgstr "Terralab toimitetut testimuuttujat"
+msgstr "TerraLabin toimitetut testimuuttujat"
 
 #. module: terralab
 #: model:ir.model,name:terralab.model_terralab_testtype
 msgid "TerraLab Test"
-msgstr ""
+msgstr "TerraLab-testi"
 
 #. module: terralab
 #: model:ir.actions.act_window,name:terralab.test_types_list_action
 msgid "TerraLab Test Types"
-msgstr ""
+msgstr "TerraLab-testityypit"
 
 #. module: terralab
 #: model:ir.model,name:terralab.model_terralab_testvariabletype
 msgid "TerraLab Test Variable Type"
-msgstr ""
+msgstr "TerraLab-testimuuttujatyyppi"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_test_variables
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "TerraLab Test Variables"
-msgstr "Terralab testimuuttujat"
+msgstr "TerraLab testimuuttujat"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_tests
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 #: model_terms:ir.ui.view,arch_db:terralab.product_form_view
 msgid "TerraLab Tests"
-msgstr "Terralab testit"
+msgstr "TerraLab testit"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_tree_filter
-msgid "Terralab Accepted"
-msgstr "Terralab hyväksytty"
+msgid "TerraLab Accepted"
+msgstr "TerraLab hyväksytty"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_tree_filter
-msgid "Terralab Calculated"
-msgstr "Terralab laskettu"
+msgid "TerraLab Calculated"
+msgstr "TerraLab laskettu"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_tree_filter
-msgid "Terralab Completed"
-msgstr "Terralab Valmis"
+msgid "TerraLab Completed"
+msgstr "TerraLab Valmis"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_tree_filter
-msgid "Terralab Completeds"
-msgstr "Terralab valmiit"
+msgid "TerraLab Completeds"
+msgstr "TerraLab valmiit"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_tree_filter
-msgid "Terralab Draft"
-msgstr "Terralab vedos"
+msgid "TerraLab Draft"
+msgstr "TerraLab vedos"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_next_action
-msgid "Terralab Next Action"
-msgstr "Terralab Seuraava toimenpide"
+msgid "TerraLab Next Action"
+msgstr "TerraLab Seuraava toimenpide"
 
 #. module: terralab
 #: model:ir.actions.act_window,name:terralab.orders_list_action
-msgid "Terralab Orders"
-msgstr "Terralab tilaukset"
+msgid "TerraLab Orders"
+msgstr "TerraLab-tilaukset"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_tree_filter
-msgid "Terralab Rejected"
-msgstr "Terralab hylätty"
+msgid "TerraLab Rejected"
+msgstr "TerraLab-hylätty"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_tree_filter
-msgid "Terralab Report Generated"
-msgstr "Terralab raportti luotu"
+msgid "TerraLab Report Generated"
+msgstr "TerraLabin raportti luotu"
 
 #. module: terralab
 #: model:ir.actions.act_window,name:terralab.report_types_list_action
-msgid "Terralab Report Types"
-msgstr ""
+msgid "TerraLab Report Types"
+msgstr "TerraLab-raporttityypit"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_tree_filter
-msgid "Terralab Submitted"
-msgstr "Terralab toimitettu"
+msgid "TerraLab Submitted"
+msgstr "TerraLab-toimitettu"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_reports_count
-msgid "Terralab Submitted Reports Count"
-msgstr ""
+msgid "TerraLab Submitted Reports Count"
+msgstr "TerraLabin toimitettujen raporttien määrä"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_samples_count
-msgid "Terralab Submitted Samples Count"
-msgstr "Terralab toimitettujen näytteiden määrä"
+msgid "TerraLab Submitted Samples Count"
+msgstr "TerraLab toimitettujen näytteiden määrä"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_test_variables_count
-msgid "Terralab Submitted Test Variables Count"
-msgstr "Terralab toimitettujen testimuuttujien määrä"
+msgid "TerraLab Submitted Test Variables Count"
+msgstr "TerraLab toimitettujen testimuuttujien määrä"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_tests_count
-msgid "Terralab Submitted Tests Count"
-msgstr "Terralab testien määrä"
+msgid "TerraLab Submitted Tests Count"
+msgstr "TerraLab toimitettujen testien määrä"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_product_product__terralab_test_types
 #: model:ir.model.fields,field_description:terralab.field_product_template__terralab_test_types
-msgid "Terralab Test Types"
-msgstr ""
+msgid "TerraLab Test Types"
+msgstr "TerraLab-testityypit"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_product_product__terralab_test_types_count
 #: model:ir.model.fields,field_description:terralab.field_product_template__terralab_test_types_count
-msgid "Terralab Test Types Count"
-msgstr ""
+msgid "TerraLab Test Types Count"
+msgstr "TerraLab-testityyppien määrä"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
@@ -1133,7 +1133,7 @@ msgstr "Testin nimi"
 #: model:ir.model.fields,field_description:terralab.field_terralab_testtype__test_products
 #: model_terms:ir.ui.view,arch_db:terralab.submitted_sample_form
 msgid "Test Products"
-msgstr "Testin tuote"
+msgstr "Testituotteet"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__test_result
@@ -1141,43 +1141,43 @@ msgstr "Testin tuote"
 #: model_terms:ir.ui.view,arch_db:terralab.test_report_template_2
 #: model_terms:ir.ui.view,arch_db:terralab.test_report_template_3
 msgid "Test Result"
-msgstr "Testin tulokset"
+msgstr "Testin tulos"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__test_result_uom
 #: model:ir.model.fields,field_description:terralab.field_terralab_testtype__test_result_uom
 msgid "Test Result Uom"
-msgstr "Testitulosten mittayksikkö"
+msgstr "Testituloksen mittayksikkö"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__test_type
 #: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__test_type
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Test Type"
-msgstr ""
+msgstr "Testityyppi"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__test_types
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__test_types
 msgid "Test Types"
-msgstr ""
+msgstr "Testityypit"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__test_variable_type
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Test Variable Type"
-msgstr ""
+msgstr "Testimuuttujatyyppi"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.test_variable_type_form
 msgid "Test Variable Type Form"
-msgstr ""
+msgstr "Testimuuttujiatyyppien lomake"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_testtype__test_variable_types
 #: model_terms:ir.ui.view,arch_db:terralab.test_form_view
 msgid "Test Variable Types"
-msgstr ""
+msgstr "Testimuuttujatyypit"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
@@ -1230,7 +1230,7 @@ msgstr "Arvo"
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.test_form_view
 msgid "Variable Name"
-msgstr ""
+msgstr "Muuttujan nimi"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__website_message_ids

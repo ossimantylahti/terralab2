@@ -17,7 +17,7 @@
     # for the full list
     # Fixed version syntax. Odoo add-ons versions scheme must be major odoo version.x.x.x for Odoo to detect changes in modules and apply updates. In this case 13.x.x.x.
     'category': 'Specific Industry Applications',
-    'version': '13.0.2.12',
+    'version': '13.0.2.13',
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'product', 'sale', 'google_spreadsheet', 'uom', 'mrp', 'stock', 'sale_management'],
