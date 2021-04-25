@@ -22,24 +22,26 @@
     # any module necessary for this one to work correctly
     'depends': ['base', 'product', 'sale', 'google_spreadsheet', 'uom', 'mrp', 'stock', 'sale_management'],
 
-    # always loaded
+    # always loaded; these need to be in a specific order
     'data': [
         'security/ir.model.access.csv',
         'data/sites.xml',
         'reports/terralab_test_report.xml',
         'reports/terralab_test_report_2.xml',
         'reports/terralab_test_report_3.xml',
+        # Models
         'views/order_form.xml',
         'views/order_views.xml',
         'views/product_views.xml',
-        'views/report_views.xml',
-        'views/sample_views.xml',
+        'views/report_type_views.xml',
+        'views/sample_type_views.xml',
         'views/spreadsheet_views.xml',
+        'views/submitted_report_views.xml',
         'views/submitted_sample_views.xml',
         'views/submitted_test_views.xml',
         'views/submitted_test_variable_views.xml',
-        'views/test_views.xml',
-        'views/test_variable_views.xml',
+        'views/test_type_views.xml',
+        'views/test_variable_type_views.xml',
         # Menu
         'views/menu_actions.xml',
         'views/menu_items.xml',

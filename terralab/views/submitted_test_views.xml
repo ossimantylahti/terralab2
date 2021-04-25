@@ -9,7 +9,7 @@
         <tree>
           <field name="order"/>
           <field name="submitted_sample"/>
-          <field name="test"/>
+          <field name="test_type"/>
           <field name="test_result"/>
           <field name="test_result_uom"/>
         </tree>
@@ -28,7 +28,7 @@
             <notebook position="inside">
               <page string="Submitted Test Settings">
                 <group name="submitted_test_settings">
-                  <field name="test"/>
+                  <field name="test_type"/>
                   <field name="test_result"/>
                   <field name="test_result_uom"/>
                 </group>
@@ -37,7 +37,7 @@
                 <field name="submitted_test_variables" widget="one2many" mode="tree,kanban">
                   <tree string="TerraLab Submitted Test Variables">
                     <field name="submitted_sample" />
-                    <field name="test_variable" />
+                    <field name="test_variable_type" />
                     <field name="value" />
                   </tree>
                 </field>

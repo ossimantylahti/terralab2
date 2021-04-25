@@ -9,7 +9,7 @@ class SubmittedTest(models.Model):
     _inherit = ['mail.thread']
     _description = 'TerraLab Submitted Test'
 
-    test = fields.Many2one('terralab.test', 'Test', track_visibility='onchange') # A Submitted Test is a specific Test
+    test_type = fields.Many2one('terralab.testtype', 'Test Type', track_visibility='onchange') # A Submitted Test is a specific Test Type
     order = fields.Many2one('sale.order', 'Order', track_visibility='onchange') # Submitted Test is always attached to an Order
     submitted_sample = fields.Many2one('terralab.submittedsample', 'Submitted Sample', track_visibility='onchange') # A Submitted Test is attached to a specific Submitted Sample
     submitted_test_variables = fields.One2many('terralab.submittedtestvariable', 'submitted_test', 'Submitted Test Variables', track_visibility='onchange') # A Submitted Test has a number of Submitted Test Variables
@@ -17,7 +17,7 @@ class SubmittedTest(models.Model):
     test_result_uom = fields.Many2one('uom.uom', track_visibility='onchange')
 
     def name_get(self):
-        return [(submitted_test.id, '%s %s %s' % (submitted_test.submitted_sample.sample.name, submitted_test.submitted_sample.serial_number, submitted_test.test.name)) for submitted_test in self]
+        return [(submitted_test.id, '%s %s %s' % (submitted_test.submitted_sample.sample_type.name, submitted_test.submitted_sample.serial_number, submitted_test.test_type.name)) for submitted_test in self]
 
     # Order form action: Calculate test results
     def action_terralab_calculate(self):
@@ -41,7 +41,7 @@ class SubmittedTest(models.Model):
     # Calculate test result
     def calculate_test_result(self):
         spreadsheet = self.test.spreadsheet
-        result = spreadsheet.calculate_result(self.test, self.submitted_test_variables)
+        result = spreadsheet.calculate_result(self.test_type, self.submitted_test_variables)
         self.write({
             'test_result': result,
         })

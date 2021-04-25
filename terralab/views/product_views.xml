@@ -9,7 +9,7 @@
         <tree>
           <field name="name" string="Product Name"/>
           <field name="lst_price" string="Sales Price"/>
-          <field name="terralab_tests_count"/>
+          <field name="terralab_test_types_count"/>
         </tree>
       </field>
     </record>
@@ -23,7 +23,7 @@
       <field name="arch" type="xml">
         <notebook position="inside">
           <page string="TerraLab Tests">
-            <field name="terralab_tests" widget="many2many" mode="tree,kanban">
+            <field name="terralab_test_types" widget="many2many" mode="tree,kanban">
               <tree string="TerraLab Tests">
                 <field name="name" string="Test Name"/>
               </tree>

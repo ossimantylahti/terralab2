@@ -8,7 +8,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="order"/>
-          <field name="sample"/>
+          <field name="sample_type"/>
           <field name="serial_number"/>
         </tree>
       </field>
@@ -24,7 +24,7 @@
 
               <page string="Sample Settings">
                 <group name="submitted_sample_settings">
-                  <field name="sample"/>
+                  <field name="sample_type"/>
                   <field name="serial_number"/>
                   <field name="order" readonly="1"/>
                 </group>
@@ -34,7 +34,7 @@
                 <field name="test_products" string="Test Products" widget="many2many" mode="tree,kanban">
                   <tree string="Test Products" editable="bottom">
                     <field name="name" string="Product Name" readonly="1"/>
-                    <field name="terralab_tests" readonly="1"/>
+                    <field name="terralab_test_types" readonly="1"/>
                   </tree>
                 </field>
               </page>

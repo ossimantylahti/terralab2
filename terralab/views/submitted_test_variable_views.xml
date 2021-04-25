@@ -11,7 +11,7 @@
           <field name="name"/>
           <field name="submitted_test"/>
           <field name="submitted_sample"/>
-          <field name="test_variable"/>
+          <field name="test_variable_type"/>
           <field name="value"/>
         </tree>
       </field>
@@ -26,7 +26,7 @@
             <group>
               <field name="submitted_test"/>
               <field name="submitted_sample"/>
-              <field name="test_variable"/>
+              <field name="test_variable_type"/>
               <field name="value"/>
             </group>
           </sheet>

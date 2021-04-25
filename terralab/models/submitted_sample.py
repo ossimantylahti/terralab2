@@ -9,7 +9,7 @@ class SubmittedSample(models.Model):
     _inherit = ['mail.thread']
     _description = 'TerraLab Submitted Sample'
 
-    sample = fields.Many2one('terralab.sample', 'Sample', track_visibility='onchange') # Submitted Sample is a specific Sample
+    sample_type = fields.Many2one('terralab.sampletype', 'Sample Type', track_visibility='onchange') # Submitted Sample is of specific Sample Type
     test_products = fields.Many2many('product.template', track_visibility='onchange') # Assigned test products
     submitted_tests = fields.One2many('terralab.submittedtest', 'submitted_sample', 'Submitted Tests', track_visibility='onchange') # Submitted Sample may have many Submitted Tests attached to it
     order = fields.Many2one('sale.order', 'Order', track_visibility='onchange') # Submitted Sample is always attached to an Order
@@ -17,12 +17,12 @@ class SubmittedSample(models.Model):
     serial_number = fields.Char(track_visibility='onchange') # Freeform serial number to identify submitted sample
 
     def name_get(self):
-        return [(submitted_sample.id, '%s %s' % (submitted_sample.sample.name if submitted_sample.sample else '(no sample)', submitted_sample.serial_number if submitted_sample.serial_number else '(no serial number)')) for submitted_sample in self]
+        return [(submitted_sample.id, '%s %s' % (submitted_sample.sample_type.name if submitted_sample.sample_type else '(no sample)', submitted_sample.serial_number if submitted_sample.serial_number else '(no serial number)')) for submitted_sample in self]
 
     # What's the next required action for this submitted sample?
     def compute_terralab_next_action(self, order_terralab_status):
-        if not self.sample:
-            return _('Set sample for submitted sample %s') % (self.name_get()[0][1])
+        if not self.sample_type:
+            return _('Set sample type for submitted sample %s') % (self.name_get()[0][1])
         if not self.serial_number:
             return _('Set serial number for submitted sample %s') % (self.name_get()[0][1])
         if len(self.submitted_tests) <= 0:

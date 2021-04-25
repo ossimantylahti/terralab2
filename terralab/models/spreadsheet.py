@@ -21,7 +21,7 @@ class Spreadsheet(models.Model):
     name = fields.Char(track_visibility='onchange')
     spreadsheet_url = fields.Char(track_visibility='onchange')
     spreadsheet_id = fields.Char(track_visibility='onchange')
-    tests = fields.One2many('terralab.test', 'spreadsheet', 'Tests', track_visibility='onchange')
+    test_types = fields.One2many('terralab.testtype', 'spreadsheet', 'Test Types', track_visibility='onchange') # Test Types attached to this spreadsheet
 
     def write(self, values):
         new_url = values.get('spreadsheet_url', None)
@@ -35,7 +35,7 @@ class Spreadsheet(models.Model):
         logger.info('Writing Spreadsheet %s' % (values))
         return True
 
-    def calculate_result(self, test, submitted_test_variables):
+    def calculate_result(self, test_type, submitted_test_variables):
         access_token = self.env['google.drive.config'].get_access_token(scope='https://spreadsheets.google.com/feeds')
         spreadsheets = get_google_spreadsheets(access_token)
         logger.info('Calculating spreadsheet %s test result with submitted variables: %s' % (self.spreadsheet_id, submitted_test_variables))
@@ -46,7 +46,7 @@ class Spreadsheet(models.Model):
             update_result = spreadsheets.values().update(spreadsheetId=self.spreadsheet_id, range=submitted_test_variable.test_variable.spreadsheet_input_ref, valueInputOption='USER_ENTERED', body={'values':[[submitted_test_variable.value]]}).execute()
             logger.info('Update result: %s' % (update_result))
         # Retrieve result variable
-        result = spreadsheets.values().get(spreadsheetId=self.spreadsheet_id, range=test.terralab_spreadsheet_result_ref).execute()
+        result = spreadsheets.values().get(spreadsheetId=self.spreadsheet_id, range=test_type.terralab_spreadsheet_result_ref).execute()
         values = result.get('values', [])
         logger.info('RESULT VALUES: %s' % (values))
         return values[0][0]

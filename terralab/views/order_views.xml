@@ -15,7 +15,7 @@
           <field name="terralab_submitted_samples_count" string="Samples" readonly="1"/>
           <field name="terralab_submitted_tests_count" string="Tests" readonly="1"/>
           <field name="terralab_submitted_test_variables_count" string="Test Variables" readonly="1"/>
-          <field name="terralab_reports_count" string="Reports" readonly="1"/>
+          <field name="terralab_submitted_reports_count" string="Reports" readonly="1"/>
         </tree>
       </field>
     </record>

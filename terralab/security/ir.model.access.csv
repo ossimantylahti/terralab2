@@ -1,9 +1,10 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_terralab_submittedsample,terralab.submittedsample,model_terralab_submittedsample,,1,1,1,1
-access_terralab_sample,terralab.sample,model_terralab_sample,,1,1,1,1
+access_terralab_sampletype,terralab.sampletype,model_terralab_sampletype,,1,1,1,1
 access_terralab_submittedtestvariable,terralab.submittedtestvariable,model_terralab_submittedtestvariable,,1,1,1,1
-access_terralab_testvariable,terralab.testvariable,model_terralab_testvariable,,1,1,1,1
-access_terralab_report,terralab.report,model_terralab_report,,1,1,1,1
+access_terralab_testvariabletype,terralab.testvariabletype,model_terralab_testvariabletype,,1,1,1,1
+access_terralab_submittedreport,terralab.submittedreport,model_terralab_submittedreport,,1,1,1,1
+access_terralab_reporttype,terralab.reporttype,model_terralab_reporttype,,1,1,1,1
 access_terralab_submittedtest,terralab.submittedtest,model_terralab_submittedtest,,1,1,1,1
-access_terralab_test,terralab.test,model_terralab_test,,1,1,1,1
+access_terralab_testtype,terralab.testtype,model_terralab_testtype,,1,1,1,1
 access_terralab_spreadsheet,terralab.spreadsheet,model_terralab_spreadsheet,,1,1,1,1

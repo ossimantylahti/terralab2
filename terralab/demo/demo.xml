@@ -1,12 +1,12 @@
 <odoo>
   <data>
-    <record id="sample_1" model="terralab.sample">
+    <record id="sample_1" model="terralab.sampletype">
       <field name="name">Water Sample (demo)</field>
     </record>
-    <record id="sample_2" model="terralab.sample">
+    <record id="sample_2" model="terralab.sampletype">
       <field name="name">Ground Sample (demo)</field>
     </record>
-    <record id="sample_3" model="terralab.sample">
+    <record id="sample_3" model="terralab.sampletype">
       <field name="name">Air Sample (demo)</field>
     </record>
   </data>

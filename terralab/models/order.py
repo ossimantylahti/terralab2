@@ -23,16 +23,16 @@ class Order(models.Model):
     terralab_submitted_samples_count = fields.Integer(compute='_compute_submitted_samples_count', store=True)
 
     # Tests
-    terralab_submitted_tests = fields.One2many('terralab.submittedtest', 'order', 'TerraLab Submitted Tests') # All Tests Submitted to this Order
+    terralab_submitted_tests = fields.One2many('terralab.submittedtest', 'order', 'TerraLab Tests') # All Tests Submitted to this Order
     terralab_submitted_tests_count = fields.Integer(compute='_compute_submitted_tests_count', store=True)
 
     # Test Variables
-    terralab_submitted_test_variables = fields.One2many('terralab.submittedtestvariable', 'order', 'TerraLab Submitted Test Variables') # All Test Variables Submitted to this Order
+    terralab_submitted_test_variables = fields.One2many('terralab.submittedtestvariable', 'order', 'TerraLab Test Variables') # All Test Variables Submitted to this Order
     terralab_submitted_test_variables_count = fields.Integer(compute='_compute_submitted_test_variables_count', store=True)
 
     # Reports
-    terralab_reports = fields.One2many('terralab.report', 'order', 'TerraLab Reports') # All Reports attached to this Order
-    terralab_reports_count = fields.Integer(compute='_compute_reports_count', store=True)
+    terralab_submitted_reports = fields.One2many('terralab.submittedreport', 'order', 'TerraLab Reports') # All Reports attached to this Order
+    terralab_submitted_reports_count = fields.Integer(compute='_compute_submitted_reports_count', store=True)
 
     # Other
     terralab_next_action = fields.Char(compute='_compute_terralab_next_action', store=True) # Next action required
@@ -66,13 +66,13 @@ class Order(models.Model):
                 submitted_test_variables_count += 1
             item.terralab_submitted_test_variables_count = submitted_test_variables_count
 
-    @api.depends('terralab_reports')
-    def _compute_reports_count(self):
+    @api.depends('terralab_submitted_reports')
+    def _compute_submitted_reports_count(self):
         for item in self:
-            reports_count = 0
-            for report in item.terralab_reports:
-                reports_count += 1
-            item.terralab_reports_count = reports_count
+            submitted_reports_count = 0
+            for report in item.terralab_submitted_reports:
+                submitted_reports_count += 1
+            item.terralab_submitted_reports_count = submitted_reports_count
 
     def compute_terralab_next_action(self, order_terralab_status):
         if len(self.terralab_submitted_samples) <= 0:
@@ -101,39 +101,42 @@ class Order(models.Model):
         return ''
 
     # Create Submitted Tests and Submitted Test Variables for all tests in this Test Product
-    def _add_terralab_test_objects(self, terralab_test, submitted_sample):
+    def _add_terralab_test_objects(self, terralab_test_type, submitted_sample):
         SubmittedTest = self.env['terralab.submittedtest']
         SubmittedTestVariable = self.env['terralab.submittedtestvariable']
 
         # Do we already have a submitted test with same parameters?
         submitted_test = None
         for existing_submitted_test in self.terralab_submitted_tests:
-            if existing_submitted_test.test.id == terralab_test.id and existing_submitted_test.submitted_sample.id == submitted_sample.id:
+            if existing_submitted_test.test.id == terralab_test_type.id and existing_submitted_test.submitted_sample.id == submitted_sample.id:
                 submitted_test = existing_submitted_test
         if not submitted_test:
             # Create Submitted Test
             submitted_test = SubmittedTest.create({
-                'test': terralab_test.id,
+                'test_type': terralab_test_type.id,
                 'order': self.id,
                 'submitted_sample': submitted_sample.id,
-                'test_result_uom': terralab_test.test_result_uom.id if terralab_test.test_result_uom else None,
+                'test_result_uom': terralab_test_type.test_result_uom.id if terralab_test_type.test_result_uom else None,
             })
         # Create Submitted Test Variables
-        for test_variable in terralab_test.test_variables:
-            logger.info('Creating Submitted Test Variable for Test Variable: %s' % (test_variable))
+        for test_variable_type in terralab_test_type.test_variable_types:
+            logger.info('Creating Submitted Test Variable for Test Variable Type: %s' % (test_variable_type))
             submitted_test_variable = None
             for existing_submitted_test_variable in self.terralab_submitted_test_variables:
-                if existing_submitted_test_variable.test_variable.id == test_variable.id and existing_submitted_test_variable.order.id == self.id and existing_submitted_test_variable.submitted_sample.id == submitted_sample.id and existing_submitted_test_variable.submitted_test.id == submitted_test.id:
-                    submitted_test_variable = existing_submitted_test_variable
+                if existing_submitted_test_variable.test_variable_type.id == test_variable_type.id and \
+                    existing_submitted_test_variable.order.id == self.id and \
+                    existing_submitted_test_variable.submitted_sample.id == submitted_sample.id and \
+                    existing_submitted_test_variable.submitted_test.id == submitted_test.id:
+                        submitted_test_variable = existing_submitted_test_variable
             if not submitted_test_variable:
                 submitted_test_variable = SubmittedTestVariable.create({
-                    'test_variable': test_variable.id,
+                    'test_variable_type': test_variable_type.id,
                     'order': self.id,
                     'submitted_sample': submitted_sample.id,
                     'submitted_test': submitted_test.id,
                 })
 
-    def _create_order_lines_for_tests(self):
+    def _create_order_lines_for_test_types(self):
         OrderLine = self.env['sale.order.line']
         SubmittedTest = self.env['terralab.submittedtest']
         SubmittedTestVariable = self.env['terralab.submittedtestvariable']
@@ -162,8 +165,8 @@ class Order(models.Model):
                     submitted_sample.write({ 'order_line': order_line.id })
 
                 # Direct tests
-                if hasattr(test_product, 'terralab_tests'):
-                    for terralab_test in test_product.terralab_tests:
+                if hasattr(test_product, 'terralab_test_types'):
+                    for terralab_test in test_product.terralab_test_types:
                         self._add_terralab_test_objects(terralab_test, submitted_sample)
 
                 # BoM tests
@@ -171,44 +174,31 @@ class Order(models.Model):
                     for bom_id in test_product.bom_ids:
                         if hasattr(bom_id, 'bom_line_ids'):
                             for bom_line_id in bom_id.bom_line_ids:
-                                if bom_line_id.product_id and hasattr(bom_line_id.product_id, 'terralab_tests'):
-                                    for terralab_test in bom_line_id.product_id.terralab_tests:
+                                if bom_line_id.product_id and hasattr(bom_line_id.product_id, 'terralab_test_types'):
+                                    for terralab_test in bom_line_id.product_id.terralab_test_types:
                                         self._add_terralab_test_objects(terralab_test, submitted_sample)
 
     @api.model
     def create(self, values):
-        Product = self.env['product.template']
-        OrderLine = self.env['sale.order.line']
-        Test = self.env['terralab.test']
-        SubmittedTest = self.env['terralab.submittedtest']
-        SubmittedTestVariable = self.env['terralab.submittedtestvariable']
-
         # If any TerraLab Submitted Samples are included in the order, set the TerraLab status to Draft so it appears in lists
         if len(values.get('terralab_submitted_samples', [])) > 0:
             logger.info('Created Order contains TerraLab Submitted Samples, setting status to draft')
             values['terralab_status'] = 'draft'
-
-        ## XXX TODO maybe we should also check if order contains any products with TerraLab tests?
         order = super(Order, self).create(values)
-        order._create_order_lines_for_tests()
+        order._create_order_lines_for_test_types()
         return order
 
     def write(self, values):
-        #self.env.add_to_compute(partner_obj._fields['tests_count'], partner_obj.search([]))
         super(Order, self).write(values)
-        #logger.info('Writing Order %s' % (values))
-
         # Check if order contains TerraLab tests
         is_terralab_order = False
         for order_line in self.order_line:
-            if len(order_line.product_id.terralab_tests) > 0:
+            if len(order_line.product_id.terralab_test_types) > 0:
                 is_terralab_order = True
         if is_terralab_order and not self.terralab_status:
             # Default order to draft status
             super(Order, self).write({ 'terralab_status': 'draft' })
-
-        self._create_order_lines_for_tests()
-
+        self._create_order_lines_for_test_types()
         return True
 
     # Order form action: Mark order TerraLab status as submitted
@@ -291,9 +281,9 @@ class Order(models.Model):
 
     # Generate test report
     def generate_report(self):
-        Report = self.env['terralab.report']
+        SubmittedReport = self.env['terralab.submittedreport']
         for order in self:
-            Report.create({
+            SubmittedReport.create({
                 'order': order.id,
                 'generated_at': fields.Datetime.now(),
             })

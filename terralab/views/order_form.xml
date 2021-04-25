@@ -28,56 +28,60 @@
                 <field name="terralab_status"/>
               </div>
 
-              <label for="terralab_samples_count" string="Samples"/>
-              <div class="o_row" name="terralab_samples_count">
+              <label for="terralab_submitted_samples_count" string="Samples"/>
+              <div class="o_row" name="terralab_submitted_samples_count">
                 <field name="terralab_submitted_samples_count" readonly="1"/>
               </div>
 
-              <label for="terralab_tests_count" string="Tests"/>
-              <div class="o_row" name="terralab_tests_count">
+              <label for="terralab_submitted_tests_count" string="Tests"/>
+              <div class="o_row" name="terralab_submitted_tests_count">
                 <field name="terralab_submitted_tests_count" readonly="1"/>
               </div>
 
-              <label for="terralab_test_variables_count" string="Test Variables"/>
-              <div class="o_row" name="terralab_test_variables_count">
+              <label for="terralab_submitted_test_variables_count" string="Test Variables"/>
+              <div class="o_row" name="terralab_submitted_test_variables_count">
                 <field name="terralab_submitted_test_variables_count" readonly="1"/>
               </div>
 
-              <label for="terralab_reports_count" string="Reports"/>
-              <div class="o_row" name="terralab_reports_count">
-                <field name="terralab_reports_count" readonly="1"/>
-                <span>/</span>
-                <field name="terralab_submitted_tests_count" readonly="1"/>
+              <label for="terralab_submitted_reports_count" string="Reports"/>
+              <div class="o_row" name="terralab_submitted_reports_count">
+                <field name="terralab_submitted_reports_count" readonly="1"/>
               </div>
 
             </group>
           </page>
 
-          <page string="TerraLab Samples" name="terralab_samples">
+          <page string="TerraLab Samples" name="terralab_submitted_samples">
             <field name="terralab_submitted_samples" widget="one2many" mode="tree,kanban">
               <tree string="TerraLab Samples">
-                <field name="sample" string="Sample"/>
+                <field name="sample_type" string="Sample Type"/>
                 <field name="serial_number" string="Serial Number"/>
                 <field name="order_line" string="Order Line"/>
               </tree>
             </field>
           </page>
 
-          <page string="TerraLab Tests" name="terralab_tests">
+          <page string="TerraLab Tests" name="terralab_submitted_tests">
+            <!-- Allow mass editing the test results, but not creating new submitted tests -->
             <field name="terralab_submitted_tests" widget="one2many" mode="tree,kanban">
-              <tree string="TerraLab Tests" editable="bottom">
-                <field name="test" string="Test"/>
+              <tree string="TerraLab Tests">
+                <field name="test_type" string="Test Type"/>
                 <field name="submitted_sample" string="Sample"/>
                 <field name="test_result" string="Result"/>
                 <field name="test_result_uom" string="Result Unit"/>
               </tree>
             </field>
+            <xpath expr="//field[@name='terralab_submitted_tests']" position="attributes">
+              <attribute name="options">{"no_open":true,"no_create":true}</attribute>
+              <attribute name="widget">one2many</attribute>
+            </xpath>
           </page>
 
-          <page string="TerraLab Test Variables" name="terralab_test_variables">
+          <page string="TerraLab Test Variables" name="terralab_submitted_test_variables">
+            <!-- Allow mass editing the test variables, but not creating new submitted test variables -->
             <field name="terralab_submitted_test_variables" widget="one2many" mode="tree,kanban">
-              <tree string="TerraLab Test Variables" editable="bottom">
-                <field name="test_variable" string="Test Variable"/>
+              <tree string="TerraLab Test Variables">
+                <field name="test_variable_type" string="Test Variable Type"/>
                 <field name="submitted_test" string="Test"/>
                 <field name="submitted_sample" string="Sample" />
                 <field name="value" string="Value"/>
@@ -85,11 +89,11 @@
             </field>
           </page>
 
-          <page string="TerraLab Reports" name="terralab_reports">
-            <field name="terralab_reports" widget="one2many" mode="tree,kanban" readonly="1">
+          <page string="TerraLab Reports" name="terralab_submitted_reports">
+            <field name="terralab_submitted_reports" widget="one2many" mode="tree,kanban" readonly="1">
               <tree string="TerraLab Reports">
                 <field name="generated_at" string="Generated At" />
-                <field name="report_name" string="Report Name" />
+                <field name="report_type" string="Report Type" />
                 <field name="print_count" string="Print Count" />
               </tree>
             </field>
