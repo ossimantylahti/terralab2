@@ -4,16 +4,21 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0+e\n"
+"Project-Id-Version: Odoo Server 13.0-20210419\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 07:53+0000\n"
-"PO-Revision-Date: 2021-04-25 07:53+0000\n"
+"POT-Creation-Date: 2021-04-25 13:42+0000\n"
+"PO-Revision-Date: 2021-04-25 13:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.submitted_reports_list_action
+msgid " All TerraLab Submitted Reports"
+msgstr ""
 
 #. module: terralab
 #: model:ir.actions.report,print_report_name:terralab.action_print_terralab_test_report_2
@@ -64,20 +69,16 @@ msgid "Accepted"
 msgstr "Aceptado"
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_needaction
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_needaction
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_needaction
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_needaction
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_needaction
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_needaction
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_needaction
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_needaction
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_needaction
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_needaction
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_needaction
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_needaction
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_needaction
 msgid "Action Needed"
-msgstr ""
-
-#. module: terralab
-#: model_terms:ir.ui.view,arch_db:terralab.test_form_view
-msgid "Add a Test Variable"
 msgstr ""
 
 #. module: terralab
@@ -105,8 +106,8 @@ msgid "Add value for submitted test variable %s"
 msgstr ""
 
 #. module: terralab
-#: model:ir.ui.menu,name:terralab.reports_list_menuitem
-msgid "All Reports"
+#: model:ir.ui.menu,name:terralab.submitted_reports_list_menuitem
+msgid "All Submitted Reports"
 msgstr ""
 
 #. module: terralab
@@ -125,19 +126,40 @@ msgid "All Submitted Tests"
 msgstr ""
 
 #. module: terralab
-#: model:ir.ui.menu,name:terralab.test_variables_list_menuitem
-msgid "All Test Variables"
+#: model:ir.actions.act_window,name:terralab.submitted_samples_list_action
+msgid "All TerraLab Submitted Samples"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_attachment_count
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_attachment_count
+#: model:ir.actions.act_window,name:terralab.submitted_test_variables_list_action
+msgid "All TerraLab Submitted Test Variables"
+msgstr ""
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.submitted_tests_list_action
+msgid "All TerraLab Submitted Tests"
+msgstr ""
+
+#. module: terralab
+#: model:ir.actions.act_window,name:terralab.test_variable_types_list_action
+msgid "All TerraLab Test Variable Types"
+msgstr ""
+
+#. module: terralab
+#: model:ir.ui.menu,name:terralab.test_variable_types_list_menuitem
+msgid "All Test Variable Types"
+msgstr ""
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_attachment_count
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_attachment_count
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_attachment_count
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_attachment_count
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_attachment_count
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_attachment_count
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_attachment_count
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_attachment_count
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_attachment_count
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_attachment_count
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_attachment_count
 msgid "Attachment Count"
 msgstr ""
 
@@ -183,26 +205,28 @@ msgid "Completed"
 msgstr "Listo"
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__create_uid
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__create_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__create_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__create_uid
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__create_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__create_uid
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__create_uid
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__create_uid
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__create_uid
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__create_uid
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__create_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__create_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__create_date
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__create_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__create_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__create_date
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__create_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__create_date
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__create_date
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__create_date
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__create_date
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__create_date
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__create_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__create_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__create_date
 msgid "Created on"
 msgstr "Creado"
 
@@ -212,14 +236,15 @@ msgid "Debugging"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__display_name
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__display_name
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__display_name
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__display_name
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__display_name
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__display_name
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__display_name
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__display_name
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__display_name
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__display_name
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__display_name
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__display_name
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__display_name
 msgid "Display Name"
 msgstr "Nombre"
 
@@ -245,38 +270,41 @@ msgid "Enter spreadsheet name"
 msgstr "El nombre de hoja de cálculo"
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_follower_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_follower_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_follower_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_follower_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_follower_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_follower_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_follower_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_follower_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_follower_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_follower_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_follower_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_follower_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_follower_ids
 msgid "Followers"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_channel_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_channel_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_channel_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_channel_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_channel_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_channel_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_channel_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_channel_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_channel_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_channel_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_channel_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_channel_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_channel_ids
 msgid "Followers (Channels)"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_partner_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_partner_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_partner_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_partner_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_partner_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_partner_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_partner_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_partner_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_partner_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_partner_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_partner_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_partner_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
 
@@ -297,153 +325,166 @@ msgid "Generate report"
 msgstr "Genera el informe"
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__generated_at
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__generated_at
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Generated At"
 msgstr "Informe generado en"
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__id
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__id
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__id
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__id
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__id
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__id
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__id
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__id
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__id
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__id
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__id
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__id
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__id
 msgid "ID"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,help:terralab.field_terralab_report__message_needaction
-#: model:ir.model.fields,help:terralab.field_terralab_report__message_unread
-#: model:ir.model.fields,help:terralab.field_terralab_sample__message_needaction
-#: model:ir.model.fields,help:terralab.field_terralab_sample__message_unread
+#: model:ir.model.fields,help:terralab.field_terralab_reporttype__message_needaction
+#: model:ir.model.fields,help:terralab.field_terralab_reporttype__message_unread
+#: model:ir.model.fields,help:terralab.field_terralab_sampletype__message_needaction
+#: model:ir.model.fields,help:terralab.field_terralab_sampletype__message_unread
 #: model:ir.model.fields,help:terralab.field_terralab_spreadsheet__message_needaction
 #: model:ir.model.fields,help:terralab.field_terralab_spreadsheet__message_unread
+#: model:ir.model.fields,help:terralab.field_terralab_submittedreport__message_needaction
+#: model:ir.model.fields,help:terralab.field_terralab_submittedreport__message_unread
 #: model:ir.model.fields,help:terralab.field_terralab_submittedsample__message_needaction
 #: model:ir.model.fields,help:terralab.field_terralab_submittedsample__message_unread
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtest__message_needaction
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtest__message_unread
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtestvariable__message_needaction
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtestvariable__message_unread
-#: model:ir.model.fields,help:terralab.field_terralab_test__message_needaction
-#: model:ir.model.fields,help:terralab.field_terralab_test__message_unread
-#: model:ir.model.fields,help:terralab.field_terralab_testvariable__message_needaction
-#: model:ir.model.fields,help:terralab.field_terralab_testvariable__message_unread
+#: model:ir.model.fields,help:terralab.field_terralab_testtype__message_needaction
+#: model:ir.model.fields,help:terralab.field_terralab_testtype__message_unread
+#: model:ir.model.fields,help:terralab.field_terralab_testvariabletype__message_needaction
+#: model:ir.model.fields,help:terralab.field_terralab_testvariabletype__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,help:terralab.field_terralab_report__message_has_error
-#: model:ir.model.fields,help:terralab.field_terralab_report__message_has_sms_error
-#: model:ir.model.fields,help:terralab.field_terralab_sample__message_has_error
-#: model:ir.model.fields,help:terralab.field_terralab_sample__message_has_sms_error
+#: model:ir.model.fields,help:terralab.field_terralab_reporttype__message_has_error
+#: model:ir.model.fields,help:terralab.field_terralab_reporttype__message_has_sms_error
+#: model:ir.model.fields,help:terralab.field_terralab_sampletype__message_has_error
+#: model:ir.model.fields,help:terralab.field_terralab_sampletype__message_has_sms_error
 #: model:ir.model.fields,help:terralab.field_terralab_spreadsheet__message_has_error
 #: model:ir.model.fields,help:terralab.field_terralab_spreadsheet__message_has_sms_error
+#: model:ir.model.fields,help:terralab.field_terralab_submittedreport__message_has_error
+#: model:ir.model.fields,help:terralab.field_terralab_submittedreport__message_has_sms_error
 #: model:ir.model.fields,help:terralab.field_terralab_submittedsample__message_has_error
 #: model:ir.model.fields,help:terralab.field_terralab_submittedsample__message_has_sms_error
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtest__message_has_error
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtest__message_has_sms_error
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtestvariable__message_has_error
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtestvariable__message_has_sms_error
-#: model:ir.model.fields,help:terralab.field_terralab_test__message_has_error
-#: model:ir.model.fields,help:terralab.field_terralab_test__message_has_sms_error
-#: model:ir.model.fields,help:terralab.field_terralab_testvariable__message_has_error
-#: model:ir.model.fields,help:terralab.field_terralab_testvariable__message_has_sms_error
+#: model:ir.model.fields,help:terralab.field_terralab_testtype__message_has_error
+#: model:ir.model.fields,help:terralab.field_terralab_testtype__message_has_sms_error
+#: model:ir.model.fields,help:terralab.field_terralab_testvariabletype__message_has_error
+#: model:ir.model.fields,help:terralab.field_terralab_testvariabletype__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_is_follower
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_is_follower
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_is_follower
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_is_follower
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_is_follower
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_is_follower
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_is_follower
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_is_follower
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_is_follower
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_is_follower
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_is_follower
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_is_follower
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_is_follower
 msgid "Is Follower"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report____last_update
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample____last_update
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype____last_update
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype____last_update
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet____last_update
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport____last_update
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample____last_update
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest____last_update
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable____last_update
-#: model:ir.model.fields,field_description:terralab.field_terralab_test____last_update
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable____last_update
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype____last_update
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype____last_update
 msgid "Last Modified on"
 msgstr "Última modificación el"
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__write_uid
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__write_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__write_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__write_uid
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__write_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__write_uid
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__write_uid
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__write_uid
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__write_uid
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__write_uid
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__write_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__write_uid
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__write_date
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__write_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__write_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__write_date
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__write_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__write_date
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__write_date
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__write_date
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__write_date
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__write_date
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__write_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__write_date
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__write_date
 msgid "Last Updated on"
 msgstr "Última actualización"
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_main_attachment_id
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_main_attachment_id
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_main_attachment_id
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_main_attachment_id
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_main_attachment_id
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_main_attachment_id
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_main_attachment_id
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_main_attachment_id
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_main_attachment_id
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_main_attachment_id
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_main_attachment_id
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_main_attachment_id
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_main_attachment_id
 msgid "Main Attachment"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_has_error
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_has_error
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_has_error
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_has_error
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_has_error
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_has_error
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_has_error
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_has_error
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_has_error
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_has_error
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_has_error
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_has_error
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_has_error
 msgid "Message Delivery error"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_ids
 msgid "Messages"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__name
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__name
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__name
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__name
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__name
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__name
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__name
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__name
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__name
 #: model_terms:ir.ui.view,arch_db:terralab.test_form_view
 msgid "Name"
 msgstr "Nombre"
@@ -454,67 +495,72 @@ msgid "Next Action"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_needaction_counter
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_needaction_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_needaction_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_needaction_counter
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_needaction_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_needaction_counter
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_needaction_counter
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_needaction_counter
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_needaction_counter
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_needaction_counter
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_needaction_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_needaction_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_needaction_counter
 msgid "Number of Actions"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_has_error_counter
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_has_error_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_has_error_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_has_error_counter
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_has_error_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_has_error_counter
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_has_error_counter
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_has_error_counter
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_has_error_counter
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_has_error_counter
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_has_error_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_has_error_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_has_error_counter
 msgid "Number of errors"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,help:terralab.field_terralab_report__message_needaction_counter
-#: model:ir.model.fields,help:terralab.field_terralab_sample__message_needaction_counter
+#: model:ir.model.fields,help:terralab.field_terralab_reporttype__message_needaction_counter
+#: model:ir.model.fields,help:terralab.field_terralab_sampletype__message_needaction_counter
 #: model:ir.model.fields,help:terralab.field_terralab_spreadsheet__message_needaction_counter
+#: model:ir.model.fields,help:terralab.field_terralab_submittedreport__message_needaction_counter
 #: model:ir.model.fields,help:terralab.field_terralab_submittedsample__message_needaction_counter
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtest__message_needaction_counter
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtestvariable__message_needaction_counter
-#: model:ir.model.fields,help:terralab.field_terralab_test__message_needaction_counter
-#: model:ir.model.fields,help:terralab.field_terralab_testvariable__message_needaction_counter
+#: model:ir.model.fields,help:terralab.field_terralab_testtype__message_needaction_counter
+#: model:ir.model.fields,help:terralab.field_terralab_testvariabletype__message_needaction_counter
 msgid "Number of messages which requires an action"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,help:terralab.field_terralab_report__message_has_error_counter
-#: model:ir.model.fields,help:terralab.field_terralab_sample__message_has_error_counter
+#: model:ir.model.fields,help:terralab.field_terralab_reporttype__message_has_error_counter
+#: model:ir.model.fields,help:terralab.field_terralab_sampletype__message_has_error_counter
 #: model:ir.model.fields,help:terralab.field_terralab_spreadsheet__message_has_error_counter
+#: model:ir.model.fields,help:terralab.field_terralab_submittedreport__message_has_error_counter
 #: model:ir.model.fields,help:terralab.field_terralab_submittedsample__message_has_error_counter
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtest__message_has_error_counter
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtestvariable__message_has_error_counter
-#: model:ir.model.fields,help:terralab.field_terralab_test__message_has_error_counter
-#: model:ir.model.fields,help:terralab.field_terralab_testvariable__message_has_error_counter
+#: model:ir.model.fields,help:terralab.field_terralab_testtype__message_has_error_counter
+#: model:ir.model.fields,help:terralab.field_terralab_testvariabletype__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,help:terralab.field_terralab_report__message_unread_counter
-#: model:ir.model.fields,help:terralab.field_terralab_sample__message_unread_counter
+#: model:ir.model.fields,help:terralab.field_terralab_reporttype__message_unread_counter
+#: model:ir.model.fields,help:terralab.field_terralab_sampletype__message_unread_counter
 #: model:ir.model.fields,help:terralab.field_terralab_spreadsheet__message_unread_counter
+#: model:ir.model.fields,help:terralab.field_terralab_submittedreport__message_unread_counter
 #: model:ir.model.fields,help:terralab.field_terralab_submittedsample__message_unread_counter
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtest__message_unread_counter
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtestvariable__message_unread_counter
-#: model:ir.model.fields,help:terralab.field_terralab_test__message_unread_counter
-#: model:ir.model.fields,help:terralab.field_terralab_testvariable__message_unread_counter
+#: model:ir.model.fields,help:terralab.field_terralab_testtype__message_unread_counter
+#: model:ir.model.fields,help:terralab.field_terralab_testvariabletype__message_unread_counter
 msgid "Number of unread messages"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__order
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__order
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__order
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__order
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__order
@@ -543,13 +589,13 @@ msgid "Orders"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__print_count
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__print_count
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Print Count"
 msgstr ""
 
 #. module: terralab
-#: model_terms:ir.ui.view,arch_db:terralab.report_form
+#: model_terms:ir.ui.view,arch_db:terralab.submitted_report_form
 msgid "Print Report"
 msgstr ""
 
@@ -607,9 +653,14 @@ msgid "Rejected"
 msgstr "Rechazado"
 
 #. module: terralab
-#: model_terms:ir.ui.view,arch_db:terralab.report_form
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__report_action
+msgid "Report Action"
+msgstr ""
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.submitted_report_form
 msgid "Report Form"
-msgstr "El informe"
+msgstr ""
 
 #. module: terralab
 #: code:addons/terralab/models/order.py:0
@@ -619,12 +670,18 @@ msgid "Report Generated"
 msgstr "Informe generado"
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__report_name
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__report_type
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
-msgid "Report Name"
+msgid "Report Type"
 msgstr ""
 
 #. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.reporttype_form
+msgid "Report Type Form"
+msgstr ""
+
+#. module: terralab
+#: model:ir.ui.menu,name:terralab.report_types_list_menuitem
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 #: model_terms:ir.ui.view,arch_db:terralab.order_tree
 msgid "Reports"
@@ -647,14 +704,15 @@ msgid "Result Unit"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_has_sms_error
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_has_sms_error
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_has_sms_error
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_has_sms_error
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_has_sms_error
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_has_sms_error
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_has_sms_error
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_has_sms_error
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_has_sms_error
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_has_sms_error
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_has_sms_error
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_has_sms_error
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr ""
 
@@ -669,17 +727,9 @@ msgid "Sales Price"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__sample
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__sample
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
-#: model_terms:ir.ui.view,arch_db:terralab.test_form_view
 msgid "Sample"
 msgstr "Muestra"
-
-#. module: terralab
-#: model_terms:ir.ui.view,arch_db:terralab.sample_form
-msgid "Sample Form"
-msgstr "Formulario de muestra"
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.submitted_sample_form
@@ -687,7 +737,20 @@ msgid "Sample Settings"
 msgstr ""
 
 #. module: terralab
-#: model:ir.ui.menu,name:terralab.samples_list_menuitem
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__sample_type
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__sample_type
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+#: model_terms:ir.ui.view,arch_db:terralab.test_form_view
+msgid "Sample Type"
+msgstr ""
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.sampletype_form
+msgid "Sample Type Form"
+msgstr ""
+
+#. module: terralab
+#: model:ir.ui.menu,name:terralab.sample_types_list_menuitem
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 #: model_terms:ir.ui.view,arch_db:terralab.order_tree
 msgid "Samples"
@@ -702,7 +765,7 @@ msgstr "Número de serie"
 #. module: terralab
 #: code:addons/terralab/models/submitted_sample.py:0
 #, python-format
-msgid "Set sample for submitted sample %s"
+msgid "Set sample type for submitted sample %s"
 msgstr ""
 
 #. module: terralab
@@ -713,7 +776,7 @@ msgstr ""
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__spreadsheet_id
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__spreadsheet
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__spreadsheet
 #: model_terms:ir.ui.view,arch_db:terralab.test_form_view
 msgid "Spreadsheet"
 msgstr "Hoja de cálculo"
@@ -729,13 +792,13 @@ msgid "Spreadsheet ID"
 msgstr "ID en hoja de cálculo"
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__spreadsheet_input_ref
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__spreadsheet_input_ref
 #: model_terms:ir.ui.view,arch_db:terralab.test_form_view
 msgid "Spreadsheet Input Ref"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__spreadsheet_result_ref
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__spreadsheet_result_ref
 #: model_terms:ir.ui.view,arch_db:terralab.test_form_view
 msgid "Spreadsheet Result Ref"
 msgstr ""
@@ -774,6 +837,11 @@ msgid "Submitted"
 msgstr "Enviado"
 
 #. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__submitted_reports
+msgid "Submitted Reports"
+msgstr ""
+
+#. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__submitted_sample
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__submitted_sample
 msgid "Submitted Sample"
@@ -785,7 +853,7 @@ msgid "Submitted Sample Form"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__samples
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__submitted_samples
 msgid "Submitted Samples"
 msgstr ""
 
@@ -811,7 +879,7 @@ msgstr ""
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__submitted_test_variables
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__submitted_test_variables
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__submitted_test_variables
 #: model_terms:ir.ui.view,arch_db:terralab.submitted_test_form
 msgid "Submitted Test Variables"
 msgstr ""
@@ -834,8 +902,7 @@ msgstr ""
 
 #. module: terralab
 #: model:ir.actions.report,name:terralab.action_terralab_test_report
-#: model:ir.model,name:terralab.model_terralab_report
-#: model_terms:ir.ui.view,arch_db:terralab.report_form
+#: model_terms:ir.ui.view,arch_db:terralab.submitted_report_form
 msgid "TerraLab Report"
 msgstr "Informe de Terralab"
 
@@ -850,18 +917,27 @@ msgid "TerraLab Report 3"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_reports
+#: model:ir.model,name:terralab.model_terralab_reporttype
+msgid "TerraLab Report Type"
+msgstr ""
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_reports
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "TerraLab Reports"
 msgstr "Informes de Terralab"
 
 #. module: terralab
-#: model:ir.model,name:terralab.model_terralab_sample
-msgid "TerraLab Sample"
-msgstr "Muestra de Terralab"
+#: model:ir.model,name:terralab.model_terralab_sampletype
+msgid "TerraLab Sample Type"
+msgstr ""
 
 #. module: terralab
-#: model:ir.actions.act_window,name:terralab.samples_list_action
+#: model:ir.actions.act_window,name:terralab.sample_types_list_action
+msgid "TerraLab Sample Types"
+msgstr ""
+
+#. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_samples
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "TerraLab Samples"
@@ -884,13 +960,13 @@ msgid "TerraLab Status"
 msgstr "Estatus de Terralab"
 
 #. module: terralab
-#: model:ir.model,name:terralab.model_terralab_submittedsample
-msgid "TerraLab Submitted Sample"
+#: model:ir.model,name:terralab.model_terralab_submittedreport
+msgid "TerraLab Submitted Report"
 msgstr ""
 
 #. module: terralab
-#: model:ir.actions.act_window,name:terralab.submitted_samples_list_action
-msgid "TerraLab Submitted Samples"
+#: model:ir.model,name:terralab.model_terralab_submittedsample
+msgid "TerraLab Submitted Sample"
 msgstr ""
 
 #. module: terralab
@@ -904,36 +980,33 @@ msgid "TerraLab Submitted Test Variable"
 msgstr ""
 
 #. module: terralab
-#: model:ir.actions.act_window,name:terralab.submitted_test_variables_list_action
-#: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_test_variables
 #: model_terms:ir.ui.view,arch_db:terralab.submitted_test_form
 msgid "TerraLab Submitted Test Variables"
 msgstr ""
 
 #. module: terralab
-#: model:ir.actions.act_window,name:terralab.submitted_tests_list_action
-#: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_tests
-msgid "TerraLab Submitted Tests"
+#: model:ir.model,name:terralab.model_terralab_testtype
+msgid "TerraLab Test"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model,name:terralab.model_terralab_test
-msgid "TerraLab Test"
-msgstr "Prueba de Terralab"
+#: model:ir.actions.act_window,name:terralab.test_types_list_action
+msgid "TerraLab Test Types"
+msgstr ""
 
 #. module: terralab
-#: model:ir.model,name:terralab.model_terralab_testvariable
-msgid "TerraLab Test Variable"
-msgstr "Variable de prueba de Terralab"
+#: model:ir.model,name:terralab.model_terralab_testvariabletype
+msgid "TerraLab Test Variable Type"
+msgstr ""
 
 #. module: terralab
-#: model:ir.actions.act_window,name:terralab.test_variables_list_action
+#: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_test_variables
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "TerraLab Test Variables"
 msgstr ""
 
 #. module: terralab
-#: model:ir.actions.act_window,name:terralab.tests_list_action
+#: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_tests
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 #: model_terms:ir.ui.view,arch_db:terralab.product_form_view
 msgid "TerraLab Tests"
@@ -985,18 +1058,18 @@ msgid "Terralab Report Generated"
 msgstr ""
 
 #. module: terralab
-#: model:ir.actions.act_window,name:terralab.reports_list_action
-msgid "Terralab Reports"
-msgstr ""
-
-#. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_reports_count
-msgid "Terralab Reports Count"
+#: model:ir.actions.act_window,name:terralab.report_types_list_action
+msgid "Terralab Report Types"
 msgstr ""
 
 #. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_tree_filter
 msgid "Terralab Submitted"
+msgstr ""
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_sale_order__terralab_submitted_reports_count
+msgid "Terralab Submitted Reports Count"
 msgstr ""
 
 #. module: terralab
@@ -1015,20 +1088,18 @@ msgid "Terralab Submitted Tests Count"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_product_product__terralab_tests
-#: model:ir.model.fields,field_description:terralab.field_product_template__terralab_tests
-msgid "Terralab Tests"
+#: model:ir.model.fields,field_description:terralab.field_product_product__terralab_test_types
+#: model:ir.model.fields,field_description:terralab.field_product_template__terralab_test_types
+msgid "Terralab Test Types"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_product_product__terralab_tests_count
-#: model:ir.model.fields,field_description:terralab.field_product_template__terralab_tests_count
-msgid "Terralab Tests Count"
+#: model:ir.model.fields,field_description:terralab.field_product_product__terralab_test_types_count
+#: model:ir.model.fields,field_description:terralab.field_product_template__terralab_test_types_count
+msgid "Terralab Test Types Count"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__test
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__test
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 msgid "Test"
 msgstr "Prueba"
@@ -1045,7 +1116,7 @@ msgstr "Nombre de prueba"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__test_products
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__test_products
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__test_products
 #: model_terms:ir.ui.view,arch_db:terralab.submitted_sample_form
 msgid "Test Products"
 msgstr ""
@@ -1060,26 +1131,43 @@ msgstr "Resultado de prueba"
 
 #. module: terralab
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__test_result_uom
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__test_result_uom
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__test_result_uom
 msgid "Test Result Uom"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__test_variable
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__test_type
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__test_type
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
-msgid "Test Variable"
+msgid "Test Type"
 msgstr ""
 
 #. module: terralab
-#: model_terms:ir.ui.view,arch_db:terralab.test_variable_form
-msgid "Test Variable Form"
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__test_types
+#: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__test_types
+msgid "Test Types"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__test_variables
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__test_variable_type
+#: model_terms:ir.ui.view,arch_db:terralab.order_form_view
+msgid "Test Variable Type"
+msgstr ""
+
+#. module: terralab
+#: model_terms:ir.ui.view,arch_db:terralab.test_variable_type_form
+msgid "Test Variable Type Form"
+msgstr ""
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__test_variable_types
+#: model_terms:ir.ui.view,arch_db:terralab.test_form_view
+msgid "Test Variable Types"
+msgstr ""
+
+#. module: terralab
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 #: model_terms:ir.ui.view,arch_db:terralab.order_tree
-#: model_terms:ir.ui.view,arch_db:terralab.test_form_view
 #: model_terms:ir.ui.view,arch_db:terralab.test_report_template
 #: model_terms:ir.ui.view,arch_db:terralab.test_report_template_2
 #: model_terms:ir.ui.view,arch_db:terralab.test_report_template_3
@@ -1087,35 +1175,35 @@ msgid "Test Variables"
 msgstr "Variables de pruebas"
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__tests
-#: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__tests
-#: model:ir.ui.menu,name:terralab.tests_list_menuitem
+#: model:ir.ui.menu,name:terralab.test_types_list_menuitem
 #: model_terms:ir.ui.view,arch_db:terralab.order_form_view
 #: model_terms:ir.ui.view,arch_db:terralab.order_tree
 msgid "Tests"
 msgstr "Pruebas"
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_unread
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_unread
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_unread
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_unread
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_unread
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_unread
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_unread
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_unread
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_unread
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_unread
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_unread
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_unread
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_unread
 msgid "Unread Messages"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__message_unread_counter
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__message_unread_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__message_unread_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__message_unread_counter
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__message_unread_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__message_unread_counter
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__message_unread_counter
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__message_unread_counter
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__message_unread_counter
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__message_unread_counter
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__message_unread_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__message_unread_counter
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr ""
 
@@ -1126,25 +1214,32 @@ msgid "Value"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,field_description:terralab.field_terralab_report__website_message_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_sample__website_message_ids
+#: model_terms:ir.ui.view,arch_db:terralab.test_form_view
+msgid "Variable Name"
+msgstr ""
+
+#. module: terralab
+#: model:ir.model.fields,field_description:terralab.field_terralab_reporttype__website_message_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_sampletype__website_message_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_spreadsheet__website_message_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_submittedreport__website_message_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedsample__website_message_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtest__website_message_ids
 #: model:ir.model.fields,field_description:terralab.field_terralab_submittedtestvariable__website_message_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_test__website_message_ids
-#: model:ir.model.fields,field_description:terralab.field_terralab_testvariable__website_message_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_testtype__website_message_ids
+#: model:ir.model.fields,field_description:terralab.field_terralab_testvariabletype__website_message_ids
 msgid "Website Messages"
 msgstr ""
 
 #. module: terralab
-#: model:ir.model.fields,help:terralab.field_terralab_report__website_message_ids
-#: model:ir.model.fields,help:terralab.field_terralab_sample__website_message_ids
+#: model:ir.model.fields,help:terralab.field_terralab_reporttype__website_message_ids
+#: model:ir.model.fields,help:terralab.field_terralab_sampletype__website_message_ids
 #: model:ir.model.fields,help:terralab.field_terralab_spreadsheet__website_message_ids
+#: model:ir.model.fields,help:terralab.field_terralab_submittedreport__website_message_ids
 #: model:ir.model.fields,help:terralab.field_terralab_submittedsample__website_message_ids
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtest__website_message_ids
 #: model:ir.model.fields,help:terralab.field_terralab_submittedtestvariable__website_message_ids
-#: model:ir.model.fields,help:terralab.field_terralab_test__website_message_ids
-#: model:ir.model.fields,help:terralab.field_terralab_testvariable__website_message_ids
+#: model:ir.model.fields,help:terralab.field_terralab_testtype__website_message_ids
+#: model:ir.model.fields,help:terralab.field_terralab_testvariabletype__website_message_ids
 msgid "Website communication history"
 msgstr ""
