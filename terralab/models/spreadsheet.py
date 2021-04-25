@@ -23,6 +23,8 @@ class Spreadsheet(models.Model):
     spreadsheet_id = fields.Char(track_visibility='onchange')
     test_types = fields.One2many('terralab.testtype', 'spreadsheet', 'Test Types', track_visibility='onchange') # Test Types attached to this spreadsheet
 
+def create
+
     def write(self, values):
         new_url = values.get('spreadsheet_url', None)
         if new_url:
@@ -46,7 +48,7 @@ class Spreadsheet(models.Model):
             update_result = spreadsheets.values().update(spreadsheetId=self.spreadsheet_id, range=submitted_test_variable.test_variable_type.spreadsheet_input_ref, valueInputOption='USER_ENTERED', body={'values':[[submitted_test_variable.value]]}).execute()
             logger.info('Update result: %s' % (update_result))
         # Retrieve result variable
-        result = spreadsheets.values().get(spreadsheetId=self.spreadsheet_id, range=test_type.terralab_spreadsheet_result_ref).execute()
+        result = spreadsheets.values().get(spreadsheetId=self.spreadsheet_id, range=test_type.spreadsheet_result_ref).execute()
         values = result.get('values', [])
         logger.info('RESULT VALUES: %s' % (values))
         return values[0][0]

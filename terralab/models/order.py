@@ -17,6 +17,14 @@ class Order(models.Model):
         ('validated', _('Validated')),
         ('completed', _('Completed')),
     ], string='TerraLab Status', default=None)
+#    terralab_draft_date = fields.Date(string='Draft Date', readonly=True)
+#    terralab_submitted_date = fields.Date(string='Draft Date', readonly=True)
+#    terralab_accepted_date = fields.Date(string='Draft Date', readonly=True)
+#    terralab_rejected_date = fields.Date(string='Draft Date', readonly=True)
+#    terralab_draft_date = fields.Date(string='Draft Date', readonly=True)
+#    terralab_draft_date = fields.Date(string='Draft Date', readonly=True)
+#    terralab_draft_date = fields.Date(string='Draft Date', readonly=True)
+#    terralab_draft_date = fields.Date(string='Draft Date', readonly=True)
 
     # Samples
     terralab_submitted_samples = fields.One2many('terralab.submittedsample', 'order', 'TerraLab Samples') # All Samples Submitted to this Order
