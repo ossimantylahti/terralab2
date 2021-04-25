@@ -42,8 +42,8 @@ class Spreadsheet(models.Model):
         # Set input variables
         # XXX - Could we combine these to a single update() call?
         for submitted_test_variable in submitted_test_variables:
-            logger.info('Setting input variable %s=%s' % (submitted_test_variable.test_variable.spreadsheet_input_ref, submitted_test_variable.value))
-            update_result = spreadsheets.values().update(spreadsheetId=self.spreadsheet_id, range=submitted_test_variable.test_variable.spreadsheet_input_ref, valueInputOption='USER_ENTERED', body={'values':[[submitted_test_variable.value]]}).execute()
+            logger.info('Setting input variable %s=%s' % (submitted_test_variable.test_variable_type.spreadsheet_input_ref, submitted_test_variable.value))
+            update_result = spreadsheets.values().update(spreadsheetId=self.spreadsheet_id, range=submitted_test_variable.test_variable_type.spreadsheet_input_ref, valueInputOption='USER_ENTERED', body={'values':[[submitted_test_variable.value]]}).execute()
             logger.info('Update result: %s' % (update_result))
         # Retrieve result variable
         result = spreadsheets.values().get(spreadsheetId=self.spreadsheet_id, range=test_type.terralab_spreadsheet_result_ref).execute()
