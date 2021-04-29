@@ -91,8 +91,8 @@
           </page>
 
           <page string="TerraLab Tests" name="terralab_submitted_tests">
-            <field name="terralab_submitted_tests" widget="one2many" mode="tree,kanban" readonly="1">
-              <tree string="TerraLab Tests">
+            <field name="terralab_submitted_tests" widget="one2many" mode="tree,kanban">
+              <tree string="TerraLab Tests" editable="bottom">
                 <field name="test_type" string="Test Type"/>
                 <field name="submitted_sample" string="Sample"/>
                 <field name="test_result" string="Result"/>
@@ -103,8 +103,8 @@
           </page>
 
           <page string="TerraLab Test Variables" name="terralab_submitted_test_variables">
-            <field name="terralab_submitted_test_variables" widget="one2many" mode="tree,kanban" readonly="1">
-              <tree string="TerraLab Test Variables">
+            <field name="terralab_submitted_test_variables" widget="one2many" mode="tree,kanban">
+              <tree string="TerraLab Test Variables" editable="bottom">
                 <field name="test_variable_type" string="Test Variable Type"/>
                 <field name="submitted_test" string="Test"/>
                 <field name="submitted_sample" string="Sample" />
