@@ -5,6 +5,15 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+# Extend Odoo Order Line to link to TerraLab tests.
+# By default, the order line is linked to the Order and to the Test Products.
+# We add a link to the Submitted Sample that generated the Order Line.
+class OrderLine(models.Model):
+    _name = 'sale.order.line'
+    _inherit = 'sale.order.line'
+    terralab_submitted_sample = fields.Many2one('terralab.submittedsample', 'Submitted Sample', track_visibility='onchange') # An Order Line is attached to a specific Submitted Sample
+    terralab_submitted_tests = fields.One2many('terralab.submittedtest', 'order_line', 'Submitted Tests', track_visibility='onchange') # An Order Line is attached to multiple Submitted Tests
+
 # Extend Odoo Order
 class Order(models.Model):
     _name = 'sale.order'
@@ -102,37 +111,26 @@ class Order(models.Model):
         SubmittedTestVariable = self.env['terralab.submittedtestvariable']
         OrderLine = self.env['sale.order.line']
 
-        # Do we already have a submitted test for this test type and an order line for this test product?
-        submitted_test = None
-        for existing_submitted_test in self.terralab_submitted_tests:
-            logger.info('Checking if existing submitted test %s with sample %s with order_line %s order_id %s and product_template_id %s matches our order_id %s and product_id %s' % (
-                existing_submitted_test.id,
-                existing_submitted_test.submitted_sample.id,
-                existing_submitted_test.order_line,
-                existing_submitted_test.order_line.order_id if existing_submitted_test.order_line else '(none)',
-                existing_submitted_test.order_line.product_template_id if existing_submitted_test.order_line else '(none)',
-                self.id,
-                test_product.id,
-            ))
-            if existing_submitted_test.submitted_sample and existing_submitted_test.submitted_sample.id == submitted_sample.id and existing_submitted_test.order_line and existing_submitted_test.order_line.order_id.id == self.id and existing_submitted_test.order_line.product_template_id.id == test_product.id:
-                #if existing_submitted_test.test_type.id == terralab_test_type.id and existing_submitted_test.submitted_sample.id == submitted_sample.id:
-                logger.info(' - Found existing submitted test %s' % (existing_submitted_test))
-                submitted_test = existing_submitted_test
-
         # Do we already have an order line for this test product in this order?
+        submitted_test = None
         order_line = None
         for existing_order_line in self.order_line:
-            if existing_order_line.order_id.id == self.id and existing_order_line.product_template_id.id == test_product.id:
+            if existing_order_line.product_template_id.id == test_product.id and existing_order_line.terralab_submitted_sample and existing_order_line.terralab_submitted_sample.id == submitted_sample.id:
                 logger.info(' - Found existing order line %s' % (existing_order_line))
                 order_line = existing_order_line
+                # Do we already have a submitted test for this submitted sample and test type
+                for existing_submitted_test in existing_order_line.terralab_submitted_tests:
+                    if existing_submitted_test.test_type and existing_submitted_test.test_type.id == terralab_test_type.id:
+                        submitted_test = existing_submitted_test
 
-        if not order_line or (not submitted_test and not is_from_bom):
+        if not order_line:
             # Create order line
             order_line = OrderLine.create({
                 'order_id': self.id,
                 'product_id': test_product.id,
                 'name': test_product.name,
                 'product_uom': test_product.uom_id.id if test_product.uom_id else None,
+                'terralab_submitted_sample': submitted_sample.id,
             })
             order_line.product_id_change()
 
@@ -171,26 +169,6 @@ class Order(models.Model):
             # Create OrderLines for all Test Products
             for test_product in submitted_sample.test_products:
                 logger.info('Checking Order Sample Test Product %s' % (test_product))
-                #order_line_exists = False
-
-
-                #if not order_line_exists:
-                ## Add order line for test product if it doesn't exist yet
-                #if submitted_sample.order_line:
-                #    logger.info('Submitted Sample already has an order line: %s' % (submitted_sample))
-                #else:
-                #    #test_product = Product.browse(submitted_test.test.id)
-                #    logger.info('Test Product: %s' % (test_product))
-                #    # Create Order Line for this Test Product
-                #    logger.info('Creating Order Line for Order %s Test Product %s' % (self.id, test_product))
-                #    order_line = OrderLine.create({
-                #        'order_id': self.id,
-                #        'product_id': test_product.id,
-                #        'name': test_product.name,
-                #        'product_uom': test_product.uom_id.id,
-                #    })
-                #    order_line.product_id_change()
-                #    submitted_sample.write({ 'order_line': order_line.id })
 
                 # Direct tests
                 if hasattr(test_product, 'terralab_test_types'):
