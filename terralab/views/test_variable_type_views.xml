@@ -6,10 +6,11 @@
       <field name="name">terralab.testvariabletype.tree</field>
       <field name="model">terralab.testvariabletype</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree editable="bottom">
           <field name="test_type"/>
           <field name="name"/>
-          <field name="spreadsheet_input_ref"/>
+          <field name="num"/>
+          <field name="spreadsheet"/>
         </tree>
       </field>
     </record>
@@ -23,7 +24,8 @@
               <group>
                 <field name="test_type"/>
                 <field name="name"/>
-                <field name="spreadsheet_input_ref"/>
+                <field name="num"/>
+                <field name="spreadsheet"/>
               </group>
             </sheet>
             <div class="oe_chatter">

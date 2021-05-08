@@ -78,6 +78,26 @@
                 <field name="terralab_submitted_test_variables_count" readonly="1"/>
               </div>
 
+              <label for="terralab_report_text_1" string="Report Text 1"/>
+              <div class="o_row" name="terralab_report_text_1">
+                <field name="terralab_report_text_1"/>
+              </div>
+
+              <label for="terralab_report_text_2" string="Report Text 2"/>
+              <div class="o_row" name="terralab_report_text_2">
+                <field name="terralab_report_text_2"/>
+              </div>
+
+              <label for="terralab_report_text_3" string="Report Text 3"/>
+              <div class="o_row" name="terralab_report_text_3">
+                <field name="terralab_report_text_3"/>
+              </div>
+
+              <label for="terralab_report_text_4" string="Report Text 4"/>
+              <div class="o_row" name="terralab_report_text_4">
+                <field name="terralab_report_text_4"/>
+              </div>
+
             </group>
           </page>
 
@@ -85,7 +105,7 @@
             <field name="terralab_submitted_samples" widget="one2many" mode="tree,kanban">
               <tree string="TerraLab Samples">
                 <field name="sample_type" string="Sample Type"/>
-                <field name="serial_number" string="Serial Number"/>
+                <field name="sample_id" string="Sample ID"/>
               </tree>
             </field>
           </page>
@@ -96,7 +116,7 @@
                 <field name="test_type" string="Test Type"/>
                 <field name="submitted_sample" string="Sample"/>
                 <field name="test_result" string="Result"/>
-                <field name="test_result_uom" string="Result Unit"/>
+                <field name="test_result_uom_name" string="Result Unit"/>
                 <field name="order_line" string="Order Line"/>
               </tree>
             </field>
@@ -108,6 +128,7 @@
                 <field name="test_variable_type" string="Test Variable Type"/>
                 <field name="submitted_test" string="Test"/>
                 <field name="submitted_sample" string="Sample" />
+                <field name="num" string="Number"/>
                 <field name="value" string="Value"/>
               </tree>
             </field>

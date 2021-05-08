@@ -7,11 +7,12 @@
       <field name="model">terralab.testtype</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="default_code"/>
           <field name="name"/>
-          <field name="sample_type"/>
+          <field name="sample_types"/>
           <field name="spreadsheet"/>
-          <field name="spreadsheet_result_ref"/>
-          <field name="test_result_uom"/>
+          <field name="spreadsheet"/>
+          <field name="test_result_uom_name"/>
         </tree>
       </field>
     </record>
@@ -26,25 +27,25 @@
             <notebook position="inside">
               <page string="General">
                 <group name="general">
+                  <label for="default_code" string="Code"/>
+                  <div class="o_row" name="default_code">
+                    <field name="default_code"/>
+                  </div>
                   <label for="name" string="Name"/>
                   <div class="o_row" name="name">
                     <field name="name"/>
                   </div>
-                  <label for="sample_type" string="Sample Type"/>
-                  <div class="o_row" name="sample_type">
-                    <field name="sample_type"/>
+                  <label for="sample_types" string="Sample Types"/>
+                  <div class="o_row" name="sample_types">
+                    <field name="sample_types"/>
                   </div>
                   <label for="spreadsheet" string="Spreadsheet"/>
                   <div class="o_row" name="spreadsheet">
                     <field name="spreadsheet"/>
                   </div>
-                  <label for="spreadsheet_result_ref" string="Spreadsheet Result Ref"/>
-                  <div class="o_row" name="spreadsheet_result_ref">
-                    <field name="spreadsheet_result_ref" placeholder="Reference like Sheet1!A1"/>
-                  </div>
-                  <label for="test_result_uom" string="Result Unit"/>
-                  <div class="o_row" name="test_result_uom">
-                    <field name="test_result_uom"/>
+                  <label for="test_result_uom_name" string="Result Unit"/>
+                  <div class="o_row" name="test_result_uom_name">
+                    <field name="test_result_uom_name"/>
                   </div>
                 </group>
               </page>
@@ -52,7 +53,8 @@
                 <field name="test_variable_types" widget="one2many" mode="tree,kanban">
                   <tree string="Test Variable Types" editable="bottom">
                     <field name="name" string="Variable Name" />
-                    <field name="spreadsheet_input_ref" string="Spreadsheet Input Ref" />
+                    <field name="num" string="Num" />
+                    <field name="spreadsheet" string="Spreadsheet" />
                   </tree>
                 </field>
               </page>

@@ -12,25 +12,26 @@ class TestProduct(models.Model):
 
     terralab_test_types_count = fields.Integer(compute='_compute_terralab_test_types_count', store=True, track_visibility='onchange')
     terralab_test_types = fields.Many2many('terralab.testtype', track_visibility='onchange')
+    terralab_spreadsheet = fields.Many2one('terralab.spreadsheet', 'Spreadsheet', track_visibility='onchange') # Spreadsheet source of import
 
     @api.depends('terralab_test_types', 'bom_ids', 'bom_ids.bom_line_ids', 'bom_ids.bom_line_ids.product_id')
     def _compute_terralab_test_types_count(self):
         for item in self:
-            logger.info('CHECKING TERRALAB TEST TYPES %s %s %s' %(item.bom_count, item.bom_ids, item.bom_line_ids))
+            logger.debug('CHECKING TERRALAB TEST TYPES %s %s %s' %(item.bom_count, item.bom_ids, item.bom_line_ids))
             terralab_test_types_count = 0
             if hasattr(item, 'terralab_test_types'):
                 for terralab_test_type in item.terralab_test_types:
-                    logger.info('- TERRALAB TEST %s' % (terralab_test_type))
+                    logger.debug('- TERRALAB TEST %s' % (terralab_test_type))
                     terralab_test_types_count += 1
             if hasattr(item, 'bom_ids'):
                 for bom_id in item.bom_ids:
-                    logger.info('- BOM %s' % (dir(bom_id)))
+                    logger.debug('- BOM %s' % (dir(bom_id)))
                     if hasattr(bom_id, 'bom_line_ids'):
                         for bom_line_id in bom_id.bom_line_ids:
-                            logger.info('- BOM LINE %s' % (bom_line_id))
-                            logger.info('  - PRODUCT %s' % (bom_line_id.product_id))
+                            logger.debug('- BOM LINE %s' % (bom_line_id))
+                            logger.debug('  - PRODUCT %s' % (bom_line_id.product_id))
                             if bom_line_id.product_id and hasattr(bom_line_id.product_id, 'terralab_test_types'):
                                 for terralab_test_type in bom_line_id.product_id.terralab_test_types:
-                                    logger.info('   - TERRALAB TEST TYPE %s' % (terralab_test_type))
+                                    logger.debug('   - TERRALAB TEST TYPE %s' % (terralab_test_type))
                                     terralab_test_types_count += 1
             item.terralab_test_types_count = terralab_test_types_count

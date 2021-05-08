@@ -17,7 +17,7 @@
     # for the full list
     # Fixed version syntax. Odoo add-ons versions scheme must be major odoo version.x.x.x for Odoo to detect changes in modules and apply updates. In this case 13.x.x.x.
     'category': 'Specific Industry Applications',
-    'version': '13.0.2.13',
+    'version': '13.0.2.20',
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'product', 'sale', 'google_spreadsheet', 'uom', 'mrp', 'stock', 'sale_management'],
@@ -36,6 +36,7 @@
         'views/order_form.xml',
         'views/order_views.xml',
         'views/product_views.xml',
+        'views/category_views.xml',
         'views/sample_type_views.xml',
         'views/spreadsheet_views.xml',
         'views/submitted_sample_views.xml',
@@ -43,6 +44,7 @@
         'views/submitted_test_variable_views.xml',
         'views/test_type_views.xml',
         'views/test_variable_type_views.xml',
+        'views/target_use_type_views.xml',
         # Menu
         'views/menu_actions.xml',
         'views/menu_items.xml',

@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+
+    <!-- Categories -->
+    <record model="ir.ui.view" id="terralab.categories_tree">
+      <field name="name">terralab.category.tree</field>
+      <field name="model">product.category</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" string="Category Name"/>
+          <field name="terralab_spreadsheet" string="Spreadsheet"/>
+        </tree>
+      </field>
+    </record>
+
+  </data>
+</odoo>

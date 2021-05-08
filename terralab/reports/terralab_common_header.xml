@@ -8,7 +8,7 @@
           TerraLab <t t-raw="0"/>
         </div>
         <div class="col-6 text-right">
-          <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
+          <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d')"/>
         </div>
       </div>
     </div>

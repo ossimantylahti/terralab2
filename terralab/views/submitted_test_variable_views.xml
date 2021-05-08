@@ -6,14 +6,34 @@
       <field name="name">terralab.submittedtestvariable.tree</field>
       <field name="model">terralab.submittedtestvariable</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="order_name"/>
-          <field name="name"/>
-          <field name="submitted_test"/>
-          <field name="submitted_sample"/>
+        <tree editable="bottom">
+          <field name="order" string="Order" readonly="1"/>
+          <field name="order_terralab_status" string="Status" readonly="1"/>
+          <field name="submitted_test" readonly="1"/>
+          <field name="submitted_sample" readonly="1"/>
+          <field name="num"/>
           <field name="test_variable_type"/>
           <field name="value"/>
         </tree>
+      </field>
+    </record>
+
+    <!-- Custom Submitted Test filters -->
+    <record id="terralab.submitted_test_variable_tree_filter" model="ir.ui.view">
+      <field name="name">terralab.submittedtestvariable.tree.filter</field>
+      <field name="model">terralab.submittedtestvariable</field>
+      <field name="type">search</field>
+      <field name="arch" type="xml">
+        <xpath expr="/search/filter[1]" position="after">
+          <filter name="terralab_missing_value" string="Missing Values" domain="[('value','=',False)]" help="Missing Values"/>
+          <filter name="terralab_draft" string="Order Status Draft" domain="[('order_terralab_status','=','draft')]" help="Draft"/>
+          <filter name="terralab_submitted" string="Order Status Submitted" domain="[('order_terralab_status','=','submitted')]" help="Submitted"/>
+          <filter name="terralab_rejected" string="Order Status Rejected" domain="[('order_terralab_status','=','rejected')]" help="Rejected"/>
+          <filter name="terralab_accepted" string="Order Status Accepted" domain="[('order_terralab_status','=','accepted')]" help="Accepted"/>
+          <filter name="terralab_calculated" string="Order Status Calculated" domain="[('order_terralab_status','=','calculated')]" help="Calculated"/>
+          <filter name="terralab_validated" string="Order Status Validated" domain="[('order_terralab_status','=','validated')]" help="Validated"/>
+          <filter name="terralab_completed" string="Order Status Completed" domain="[('order_terralab_status','=','completed')]" help="Completeds"/>
+        </xpath>
       </field>
     </record>
 

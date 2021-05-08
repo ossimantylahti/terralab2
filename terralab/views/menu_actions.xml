@@ -11,12 +11,21 @@
     </record>
 
     <!-- Menu action: TerraLab Products -->
-      <record model="ir.actions.act_window" id="terralab.products_list_action">
+    <record model="ir.actions.act_window" id="terralab.products_list_action">
       <field name="name">TerraLab Products</field>
       <field name="res_model">product.template</field>
       <field name="view_mode">tree,form</field>
       <field name="domain">[("terralab_test_types_count", ">", 0)]</field>
       <field name="view_id" ref="terralab.product_tree"/>
+    </record>
+
+    <!-- Menu action: TerraLab Categories -->
+    <record model="ir.actions.act_window" id="terralab.categories_list_action">
+      <field name="name">TerraLab Categories</field>
+      <field name="res_model">product.category</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[("terralab_spreadsheet", "!=", False)]</field>
+      <field name="view_id" ref="terralab.categories_tree"/>
     </record>
 
     <!-- Menu action: Samples -->
@@ -37,6 +46,27 @@
     <record model="ir.actions.act_window" id="terralab.spreadsheets_list_action">
       <field name="name">TerraLab Spreadsheets</field>
       <field name="res_model">terralab.spreadsheet</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu action: Target Use -->
+    <record model="ir.actions.act_window" id="terralab.target_use_list_action">
+      <field name="name">TerraLab Target Use</field>
+      <field name="res_model">terralab.targetusetype</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu action: Mass Edit / Edit Test Results -->
+    <record model="ir.actions.act_window" id="terralab.mass_edit_test_results_action">
+      <field name="name">TerraLab Test Results</field>
+      <field name="res_model">terralab.submittedtest</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu action: Mass Edit / Edit Test Variables -->
+    <record model="ir.actions.act_window" id="terralab.mass_edit_test_variables_action">
+      <field name="name">TerraLab Test Variables</field>
+      <field name="res_model">terralab.submittedtestvariable</field>
       <field name="view_mode">tree,form</field>
     </record>
 

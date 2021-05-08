@@ -1,0 +1,65 @@
+<odoo>
+  <data>
+
+    <!-- Target Use Types -->
+    <record model="ir.ui.view" id="terralab.target_use_type_tree">
+      <field name="name">terralab.targetusetype.tree</field>
+      <field name="model">terralab.targetusetype</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="default_code"/>
+          <field name="name"/>
+          <field name="spreadsheet"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Target Use Type -->
+    <record model="ir.ui.view" id="terralab.target_use_type_form_view">
+      <field name="name">TerraLab Target Use Type</field>
+      <field name="model">terralab.targetusetype</field>
+      <field name="arch" type="xml">
+        <form string="Target Use Type Form">
+          <sheet>
+            <notebook position="inside">
+              <page string="General">
+                <group name="general">
+                  <label for="default_code" string="Code"/>
+                  <div class="o_row" name="default_code">
+                    <field name="default_code"/>
+                  </div>
+                  <label for="name" string="Name"/>
+                  <div class="o_row" name="name">
+                    <field name="name"/>
+                  </div>
+                  <label for="spreadsheet" string="Spreadsheet"/>
+                  <div class="o_row" name="spreadsheet">
+                    <field name="spreadsheet"/>
+                  </div>
+                </group>
+              </page>
+              <page string="Submitted Target Uses" name="submitted_target_uses">
+                <field name="submitted_target_uses" widget="one2many" mode="tree,kanban">
+                  <tree string="Submitted Target Uses" editable="bottom">
+                    <field name="target_use_type" string="Target Use Type" />
+                    <field name="test_type" string="Test Type" />
+                    <field name="threshold_1" string="Threshold 1" />
+                    <field name="threshold_2" string="Threshold 2" />
+                    <field name="threshold_3" string="Threshold 3" />
+                    <field name="threshold_4" string="Threshold 4" />
+                    <field name="threshold_5" string="Threshold 5" />
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers"/>
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>

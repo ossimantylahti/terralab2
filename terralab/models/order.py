@@ -49,6 +49,10 @@ class Order(models.Model):
 
     # Other
     terralab_next_action = fields.Char(compute='_compute_terralab_next_action', store=True) # Next action required
+    terralab_report_text_1 = fields.Text()
+    terralab_report_text_2 = fields.Text()
+    terralab_report_text_3 = fields.Text()
+    terralab_report_text_4 = fields.Text()
 
     @api.depends('terralab_submitted_samples', 'terralab_status', 'terralab_submitted_samples.submitted_tests', 'terralab_submitted_samples.submitted_tests.submitted_test_variables', 'terralab_submitted_samples.submitted_tests.submitted_test_variables.value')
     def _compute_terralab_next_action(self):
@@ -141,12 +145,11 @@ class Order(models.Model):
                 'order': self.id,
                 'order_line': order_line.id,
                 'submitted_sample': submitted_sample.id,
-                'test_result_uom': terralab_test_type.test_result_uom.id if terralab_test_type.test_result_uom else None,
+                'test_result_uom_name': terralab_test_type.test_result_uom_name,
             })
 
         # Create Submitted Test Variables
         for test_variable_type in terralab_test_type.test_variable_types:
-            logger.info('Creating Submitted Test Variable for Test Variable Type: %s' % (test_variable_type))
             submitted_test_variable = None
             for existing_submitted_test_variable in self.terralab_submitted_test_variables:
                 if existing_submitted_test_variable.test_variable_type.id == test_variable_type.id and \
@@ -155,12 +158,15 @@ class Order(models.Model):
                     existing_submitted_test_variable.submitted_test.id == submitted_test.id:
                         submitted_test_variable = existing_submitted_test_variable
             if not submitted_test_variable:
+                logger.info('Creating Submitted Test Variable for Test Variable Type: %s' % (test_variable_type))
                 submitted_test_variable = SubmittedTestVariable.create({
                     'test_variable_type': test_variable_type.id,
                     'order': self.id,
                     'submitted_sample': submitted_sample.id,
                     'submitted_test': submitted_test.id,
                 })
+            else:
+                pass
 
     def _create_order_lines_for_test_types(self):
         # Create Order Lines for all Submitted Samples

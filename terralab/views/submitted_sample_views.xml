@@ -9,7 +9,17 @@
         <tree>
           <field name="order"/>
           <field name="sample_type"/>
-          <field name="serial_number"/>
+          <field name="num" />
+          <field name="name" />
+          <field name="sample_id" string="Sample ID" />
+          <field name="status" />
+          <field name="create_date" />
+          <field name="receive_date" />
+          <field name="deadline" />
+          <field name="submitted_target_use" />
+          <field name="area" />
+          <field name="volume" />
+          <field name="location" />
         </tree>
       </field>
     </record>
@@ -25,7 +35,17 @@
               <page string="Sample Settings">
                 <group name="submitted_sample_settings">
                   <field name="sample_type"/>
-                  <field name="serial_number"/>
+                  <field name="num" />
+                  <field name="name" />
+                  <field name="sample_id" string="Sample ID" />
+                  <field name="status" />
+                  <field name="create_date" />
+                  <field name="receive_date" />
+                  <field name="deadline" />
+                  <field name="submitted_target_use" />
+                  <field name="area" />
+                  <field name="volume" />
+                  <field name="location" />
                 </group>
               </page>
 

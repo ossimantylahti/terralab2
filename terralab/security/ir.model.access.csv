@@ -6,3 +6,5 @@ access_terralab_testvariabletype,terralab.testvariabletype,model_terralab_testva
 access_terralab_submittedtest,terralab.submittedtest,model_terralab_submittedtest,,1,1,1,1
 access_terralab_testtype,terralab.testtype,model_terralab_testtype,,1,1,1,1
 access_terralab_spreadsheet,terralab.spreadsheet,model_terralab_spreadsheet,,1,1,1,1
+access_terralab_targetusetype,terralab.targetusetype,model_terralab_targetusetype,,1,1,1,1
+access_terralab_submittedtargetuse,terralab.submittedtargetuse,model_terralab_submittedtargetuse,,1,1,1,1
